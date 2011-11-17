@@ -1,19 +1,19 @@
 @import "compass"
 +global-reset
-
+  
 $ptserif: 'PT Sans', sans-serif
 $oswald: 'Oswald', sans-serif
+$rocksalt: 'Rock Salt', cursive
 
 $image-wrapper-background-color: #eee
 $image-wrapper-padding: 7px
 $standard-line-height: 20px
 $standard-margin: 15px
-$button-radius: 10px
-$interface-radius: 5px
+$default-radius: 3px
 
 // Structure
 body
-  background: #111
+  background: #222
   color: #333
   font-family: $ptserif
 #main
@@ -21,144 +21,168 @@ body
   margin: 50px auto
   padding: 50px
   background: #fff
-  +border-radius($interface-radius)
+  +box-shadow(0 1px 25px rgba(0, 0, 0, .3), 0 0 50px rgba(255, 254, 238, .2) inset)
+  +border-radius($default-radius)
   +clearfix()
+  +background-image(linear-gradient(left, rgba(255, 254, 238, .2), #fff 7%, #efefef 93%))
 
 
-// Interface Styling
-
-.banner-box
-  position: relative
-  .banner
-    +rotate(-135deg)
-    position: absolute
-    right: -62px
-    top: -62px
-    border-color: #cc0000 transparent transparent
-    border-style: solid
-    border-width: 60px
-    height: 0px
-    width: 0px
-    span
-      +rotate(-180deg)
-      white-space: nowrap
-      color: #fff
-      position: absolute
-      top: -55px
-      right: -33px
-      display: block
-      font-weight: bold
-
-// Copy Styling
-hgroup
-  margin: ($standard-margin * 2) 0
-  h1
-    margin: 0
-  p
-    margin: 0
-    margin-top: $standard-margin / 2
-
-h1, h2, h3, h4, h5, h6
-  font-family: $oswald
-  margin: ($standard-margin * 2) 0
-  &:first-child
-    margin-top: 0
-h1
-  font-size: 2em
-h2
-  font-size: 1.5em
-  margin-bottom: $standard-margin
-h3
-  font-weight: bold
-  font-family: $ptserif
-  margin: $standard-margin 0
-p
-  margin: $standard-margin 0
-  line-height: $standard-line-height
-  .image-align-right
-    margin-top: 0
-input
-  background: #111
-  color: #eee
-  border: 0
-  padding: 5px 10px
-  text-transform: uppercase
-  letter-spacing: 1px
-  font-weight: bold
-  font-size: 12px !important
-  +border-radius($button-radius)
-  display: block
-  &:hover
-    background: #555
-
-
-.image-align-right
-  float: right
-  vertical-align: middle
-  margin: $standard-margin 0 $standard-margin $standard-margin
-.image-wrapper
-  position: relative
-  background: $image-wrapper-background-color
-  padding: $image-wrapper-padding
-  img
-    display: block
-  .blackout
-    background: #000
-    position: absolute
-    top: 0
-    left: 0
-    color: #fff
-    +display-box
-    +box-align(center)
-    text-align: center
-    line-height: $standard-line-height
-    text-transform: uppercase
-    height: 100%
-    padding: 0 50px
-blockquote
-  background: #eee
-  padding: 25px 60px
-  margin: $standard-margin 0
-  //+legacy-pie-clearfix()
-  color: #555
-  &:last-child
-    margin: 0
-  &:before
-    content: '"'
-    color: #fff
-    float: left
-    font-size: 150px
-    font-family: $ptserif
-    line-height: 1
-    width: 0
-    height: 0
-    position: relative
-    top: -30px
-    left: -55px
-  &:after
-    content: '"'
-    color: #fff
-    float: right
-    font-size: 150px
-    font-family: $ptserif
-    width: 50px
-    height: 0
-    width: 0
-    position: relative
-    top: -50px
-    right: 0px
-  cite
-    font-style: italic
-    font-size: 12px
-  a
-    color: #555
+  // Interface Styling
+  .CodeRay
+    +box-shadow(0px 0px 1px #eee)
+    +background-image(linear-gradient(45deg, rgba(255, 255, 255, 0.0), #eee))
+    +transition(background-color .5s ease-out)
+    background-color: #fff
     &:hover
-      color: #111
-  p
+      background-color: #efefef
+  .banner-box
+    position: relative
+    .banner
+      +rotate(-135deg)
+      position: absolute
+      right: -77px
+      top: -77px
+      border-color: #cc0000 transparent transparent
+      border-style: solid
+      border-width: 75px
+      height: 0px
+      width: 0px
+      span
+        +rotate(-177deg)
+        white-space: nowrap
+        color: #eee
+        position: absolute
+        top: -65px
+        right: -43px
+        display: block
+        //font-weight: bold
+        font-size: 16px
+        font-family: $rocksalt
+
+  // Copy Styling
+  hgroup
+    margin: ($standard-margin * 2) 0
+    h1
+      margin: 0
+    p
+      margin: 0
+      margin-top: $standard-margin / 2
+
+  h1, h2, h3, h4, h5, h6
+    font-family: $oswald
+    margin: ($standard-margin * 2) 0
     &:first-child
+      margin-top: 0
+  h1
+    font-size: 2em
+  h2
+    font-size: 1.5em
+    margin-bottom: $standard-margin
+  h3
+    font-weight: bold
+    font-family: $ptserif
+    margin: $standard-margin 0
+  p
+    margin: $standard-margin 0
+    line-height: $standard-line-height
+    .image-align-right
       margin-top: 0
     &:last-child
       margin-bottom: 0
-  
-// Colors Page
-@import colors
+  a
+    +transition(color .5s ease-out)
+    font-weight: bold
+    color: #111
+    &:hover
+      color: #cc0000
+  input
+    background: #111
+    color: #eee
+    border: 0
+    padding: 5px 10px
+    text-transform: uppercase
+    letter-spacing: 1px
+    font-weight: bold
+    font-size: 11px
+    +border-radius($default-radius)
+    display: block
+    +transition(background-color .5s ease-out)
+    &:hover
+      background: #cc0000
+
+
+  .image-align-right
+    float: right
+    vertical-align: middle
+    margin: $standard-margin 0 $standard-margin $standard-margin
+  .image-wrapper
+    position: relative
+    background: $image-wrapper-background-color
+    padding: $image-wrapper-padding
+    img
+      display: block
+    .blackout
+      background: #000
+      position: absolute
+      top: 0
+      left: 0
+      color: #fff
+      +display-box
+      +box-align(center)
+      text-align: center
+      line-height: $standard-line-height
+      text-transform: uppercase
+      height: 100%
+      padding: 0 50px
+  blockquote
+    +box-shadow(0px 0px 1px #eee)
+    +background-image(linear-gradient(45deg, rgba(255, 255, 255, 0.0), #eee))
+    +transition(background-color .5s ease-out)
+    background-color: #fff
+    padding: 25px 60px
+    margin: $standard-margin 0
+    color: #555
+    &:last-child
+      margin: 0
+    &:before
+      content: '"'
+      color: #fff
+      float: left
+      font-size: 150px
+      font-family: $ptserif
+      line-height: 1
+      width: 0
+      height: 0
+      position: relative
+      top: -30px
+      left: -55px
+    &:after
+      content: '"'
+      color: #fff
+      float: right
+      font-size: 150px
+      font-family: $ptserif
+      width: 50px
+      height: 0
+      width: 0
+      position: relative
+      top: -50px
+      right: 0px
+    &:hover
+      background-color: #eee
+    cite
+      font-style: italic
+      font-size: 12px
+    a
+      +transition(color .5s ease-out)
+      color: #555
+      &:hover
+        color: #cc0000
+    p
+      &:first-child
+        margin-top: 0
+      &:last-child
+        margin-bottom: 0
+
+  // Colors Page
+  @import colors

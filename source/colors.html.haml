@@ -55,7 +55,7 @@
     
   }
 %p
-  It should be noted that if you try to pass jquery a hsla second and third value as a fixed number instead of a percent it will fail silently.
+  It should be noted that if you try to pass jquery a hsla second and third value as a fixed number instead of a percent it will fail silently. There is already an existing solution for #{link_to('animating colors in jquery', 'http://plugins.jquery.com/project/color')} this does not however work for rgba or hsla, luckily a #{link_to('solution', 'http://blog.jquery.com/2011/05/31/jquery-color-v2-beta-1-released/')} for that exists as well. 
 %h2 Example
 %h3 Incorrect
 :coderay
@@ -77,7 +77,7 @@
 %blockquote
   %p Firefox 3.0+, Safari 3+, Chrome 6+ (maybe older too?), Opera 10+ (maybe older too?)
   %p As usual IE is left out of the party. Even version 8. I have a feeling version 9 will be supporting it but don't have any proof yet. Anyone have it installed and can test? For IE, you can just declare a fallback color. IE 8 doesn't support RGBa either, so just using a hex code is the best bet.
-  %cite 
-    \-
-    %a{ :href => "http://css-tricks.com/6565-yay-for-hsla/" }
-      http://css-tricks.com/6565-yay-for-hsla/
+  %cite  - #{ link_to('http://css-tricks.com/6565-yay-for-hsla/', 'http://css-tricks.com/6565-yay-for-hsla/') }
+      
+%h1 Cross Browser Solutions
+%p I found a few solutions to the problem but each has its own caveats. You can find out about possible solutions by reading the following <em>Stack Overflow</em> article #{link_to('Cross browser rgba background', 'http://stackoverflow.com/questions/4792090/cross-browser-rgba-background')}. If none of the solutions in the article work for your situation #{link_to('CSS3 PIE', "http://css3pie.com/documentation/supported-css3-features/#rgba") } might fit your particular needs.

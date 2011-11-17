@@ -1,7 +1,7 @@
 .CodeRay {
-  background-color: #eee;
+/*  background-color: #eee;*/
   font-family: 'Courier New', 'Terminal', monospace;
-  padding: 7px;
+  padding: 10px;
   overflow: auto;
   font-size: 14px;
   margin: 12px 0;
