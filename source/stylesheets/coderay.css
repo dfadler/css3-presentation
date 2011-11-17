@@ -1,0 +1,12 @@
+.CodeRay {
+  background-color: #eee;
+  font-family: 'Courier New', 'Terminal', monospace;
+  padding: 7px;
+  overflow: auto;
+  font-size: 14px;
+  margin: 12px 0;
+}
+.CodeRay pre {
+  margin: 0px;
+  padding: 0px;
+}

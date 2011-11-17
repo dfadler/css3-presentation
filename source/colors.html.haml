@@ -1,12 +1,83 @@
 - content_for :head do
   %title RGB(A) HSL(A) | Hex A Pox On You...
-%h1 Something New Has Been Added
+%h1 Color &amp; The Web
+%p There are number of ways to define color on the web, most notable named and Hex. Named is common because of its familiarity while hex is because of its terse shorthand but there are two other standards for which you can define colors in modern browsers"HSL &amp RGB".
+%section.banner-box
+  .banner
+    %span
+      All Black
+  :coderay
+    #!css
+    body {
+      color: black; /* Color Name */
+      color: #000; /* Hex Short Hand */
+      color: #000000; /* Full Hex */
+      color: rgb(0, 0, 0); /* RGB */ 
+      color: hsl(0, 0, 0); /* HSL */
+    }
+%p Unless you are taking advantage of the <em>alpha value</em> in rgb or hsl there is no reason to use any method over another <strong>outside of browser support</strong>. 
+%hgroup 
+  %h1 Something New Has Been Added
+  %p
+    %em Alpha Vs Opacity
 %p
   %span.image-wrapper.image-align-right
     =image_tag('racist-porky.jpg', :valign => 'top', :class => 'racist-pig') 
   Here he have a racist Porky Pig, now I cant have you seeing this so its only proper that I censor it.
-%p
+  %br
   %input{ :type => 'button', :value => 'Censor', :class => "censor" }
-  
+
 %p  
+  Now its been a few seconds since I saved you from that dirty racism and in that time I feel you have matured enough to allow you to see a little bit of the offending article.
+  %br
+  %input{ :type => 'button', :value => 'Toggle Warning', :class => "censor-opacity" }
+%h2 I'm Happy You've Matured But...
+%p 
+  Celebration is in order for your personal growth but in allowing you to view the image our warning has less impact. The problem is that traditional opacity effects the contents of the entire box, what we need is a way to define opacity but only for the background color.
+%p
+  %input{ :type => 'button', :value => 'RGBA', :class => "rgba" }
+  %input{ :type => 'button', :value => 'HSLA', :class => "hsla" }
+  %input{ :type => 'button', :value => 'Hex & Opacity', :class => "hex-opacity" }
+:coderay
+  #!css
+  body {
   
+    /*  Hex & Opacity */
+    background: #000
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+    opacity: 0.5;
+    
+    /* RGBA */
+    background: rgba(0, 0, 0, 0.5);
+    
+    /* HSLA */
+    background: hsla(0, 0, 0, 0.5);
+    
+  }
+%p
+  It should be noted that if you try to pass jquery a hsla second and third value as a fixed number instead of a percent it will fail silently.
+%h2 Example
+%h3 Incorrect
+:coderay
+  #!javascript
+    $('.example')
+      .css({
+        'background': 'hsla(0, 0, 0, 0.5)'
+      });
+%h3 Correct
+:coderay
+  #!javascript
+    $('.example')
+      .css({
+        'background': 'hsla(0, 0%, 0%, 0.5)'
+      });
+%p Even though CSS would interpret the first example correctly it would probably be best practice to get into the habit of using a percent in the second and third value to avoid having to debug your scripts later.
+
+%h1 Browser Support
+%blockquote
+  %p Firefox 3.0+, Safari 3+, Chrome 6+ (maybe older too?), Opera 10+ (maybe older too?)
+  %p As usual IE is left out of the party. Even version 8. I have a feeling version 9 will be supporting it but don't have any proof yet. Anyone have it installed and can test? For IE, you can just declare a fallback color. IE 8 doesn't support RGBa either, so just using a hex code is the best bet.
+  %cite 
+    \-
+    %a{ :href => "http://css-tricks.com/6565-yay-for-hsla/" }
+      http://css-tricks.com/6565-yay-for-hsla/

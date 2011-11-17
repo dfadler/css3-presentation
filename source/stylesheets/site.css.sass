@@ -1,36 +1,84 @@
 @import "compass"
-@include global-reset
++global-reset
+
+$ptserif: 'PT Sans', sans-serif
+$oswald: 'Oswald', sans-serif
 
 $image-wrapper-background-color: #eee
 $image-wrapper-padding: 7px
-$standard-line-height: 18px
-$standard-margin: 10px
+$standard-line-height: 20px
+$standard-margin: 15px
 $button-radius: 10px
 $interface-radius: 5px
 
 // Structure
 body
   background: #111
+  color: #333
+  font-family: $ptserif
 #main
   width: 600px
   margin: 50px auto
   padding: 50px
   background: #fff
-  @include border-radius($interface-radius)
-  @include clearfix()
+  +border-radius($interface-radius)
+  +clearfix()
+
+
+// Interface Styling
+
+.banner-box
+  position: relative
+  .banner
+    +rotate(-135deg)
+    position: absolute
+    right: -62px
+    top: -62px
+    border-color: #cc0000 transparent transparent
+    border-style: solid
+    border-width: 60px
+    height: 0px
+    width: 0px
+    span
+      +rotate(-180deg)
+      white-space: nowrap
+      color: #fff
+      position: absolute
+      top: -55px
+      right: -33px
+      display: block
+      font-weight: bold
 
 // Copy Styling
-h1
+hgroup
+  margin: ($standard-margin * 2) 0
+  h1
+    margin: 0
+  p
+    margin: 0
+    margin-top: $standard-margin / 2
+
+h1, h2, h3, h4, h5, h6
+  font-family: $oswald
   margin: ($standard-margin * 2) 0
   &:first-child
     margin-top: 0
+h1
+  font-size: 2em
+h2
+  font-size: 1.5em
+  margin-bottom: $standard-margin
+h3
+  font-weight: bold
+  font-family: $ptserif
+  margin: $standard-margin 0
 p
   margin: $standard-margin 0
-  line-height: 18px
+  line-height: $standard-line-height
   .image-align-right
     margin-top: 0
 input
-  background: #333
+  background: #111
   color: #eee
   border: 0
   padding: 5px 10px
@@ -38,22 +86,20 @@ input
   letter-spacing: 1px
   font-weight: bold
   font-size: 12px !important
-  @include border-radius($button-radius)
-  @include linear-gradient(color-stops(#111 5%, #555 45%, #111))
+  +border-radius($button-radius)
   display: block
   &:hover
-    @include linear-gradient(color-stops(#111 5%, #333 45%, #111))
+    background: #555
 
 
 .image-align-right
   float: right
   vertical-align: middle
-  margin: $standard-margin
+  margin: $standard-margin 0 $standard-margin $standard-margin
 .image-wrapper
   position: relative
   background: $image-wrapper-background-color
   padding: $image-wrapper-padding
-  display: table
   img
     display: block
   .blackout
@@ -62,6 +108,57 @@ input
     top: 0
     left: 0
     color: #fff
-    display: table-cell
-    vertical-align: middle
+    +display-box
+    +box-align(center)
     text-align: center
+    line-height: $standard-line-height
+    text-transform: uppercase
+    height: 100%
+    padding: 0 50px
+blockquote
+  background: #eee
+  padding: 25px 60px
+  margin: $standard-margin 0
+  //+legacy-pie-clearfix()
+  color: #555
+  &:last-child
+    margin: 0
+  &:before
+    content: '"'
+    color: #fff
+    float: left
+    font-size: 150px
+    font-family: $ptserif
+    line-height: 1
+    width: 0
+    height: 0
+    position: relative
+    top: -30px
+    left: -55px
+  &:after
+    content: '"'
+    color: #fff
+    float: right
+    font-size: 150px
+    font-family: $ptserif
+    width: 50px
+    height: 0
+    width: 0
+    position: relative
+    top: -50px
+    right: 0px
+  cite
+    font-style: italic
+    font-size: 12px
+  a
+    color: #555
+    &:hover
+      color: #111
+  p
+    &:first-child
+      margin-top: 0
+    &:last-child
+      margin-bottom: 0
+  
+// Colors Page
+@import colors

@@ -1,26 +1,70 @@
 $(function(){
+	
+	// Forces strict mode
 	'use strict';
+	
 	// Colors Page
-	if ($('body').hasClass('colors')) {
-		var pigContainer = $('.racist-pig').parent(),
-			pigContainerHeight = pigContainer.height(),
-			pigContainerWidth = pigContainer.width();
+	if($('body').hasClass('colors')) {
 		
-		$('.colors .censor')
+		var pigContainer = $('.racist-pig').parent(),
+			pigContainerOpacity = 0.5;
+		
+		$('.colors input')
 			.bind('click', function() {
-				if(pigContainer.find('.blackout').length <= 0) {
-					pigContainer
-						.append('<span class="blackout">This Image Has Been Censored For Your Protection')
-						.find('.blackout')
-						.css({
-							'height': pigContainerHeight + 14,
-							'width': pigContainerWidth + 14
-						});
-				} else {
-					pigContainer
-						.find('.blackout')
-						.remove();
+				
+				if($(this).hasClass('censor')) {
+					if(pigContainer.find('.blackout').length <= 0) {
+						pigContainer
+							.append('<span class="blackout">This Image Has Been Censored For Your Protection')
+							.find('.blackout');
+					} else {
+						pigContainer
+							.find('.blackout')
+							.remove();
+					}
+				} else if($(this).hasClass('censor-opacity')) {
+					if(pigContainer.find('.blackout').length === 1 && pigContainer.find('.blackout').css('opacity') !== pigContainerOpacity) {
+						pigContainer
+							.find('.blackout')
+							.css({
+								'opacity': pigContainerOpacity,
+								'background': '#000'
+							})
+							.text('The image below is intended for mature audiences');
+					}
+				} else if($(this).hasClass('rgba')) {
+					if(pigContainer.find('.blackout').length === 1) {
+						pigContainer
+							.find('.blackout')
+							.css({
+								'opacity': 1,
+								'background': 'rgba(0, 0, 0, .5)'
+							})
+							.text('This warning is brought to you in rgba');
+					}
+				} else if($(this).hasClass('hsla')) {
+					if(pigContainer.find('.blackout').length === 1) {
+						pigContainer
+							.find('.blackout')
+							.css({
+								'opacity': 1,
+								'background': 'hsla(0, 0%, 0%, 0.5)'
+							})
+							.text('This warning is brought to you in hsla');
+					}
+				} else if($(this).hasClass('hex-opacity')) {
+					if(pigContainer.find('.blackout').length === 1) {
+						pigContainer
+							.find('.blackout')
+							.css({
+								'opacity': pigContainerOpacity,
+								'background': '#000'
+							})
+							.text('This warning is brought to you in hex & opacity');
+					}
 				}
+				
+				
 			});
 	}
 	
