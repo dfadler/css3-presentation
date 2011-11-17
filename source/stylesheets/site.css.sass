@@ -1,0 +1,67 @@
+@import "compass"
+@include global-reset
+
+$image-wrapper-background-color: #eee
+$image-wrapper-padding: 7px
+$standard-line-height: 18px
+$standard-margin: 10px
+$button-radius: 10px
+$interface-radius: 5px
+
+// Structure
+body
+  background: #111
+#main
+  width: 600px
+  margin: 50px auto
+  padding: 50px
+  background: #fff
+  @include border-radius($interface-radius)
+  @include clearfix()
+
+// Copy Styling
+h1
+  margin: ($standard-margin * 2) 0
+  &:first-child
+    margin-top: 0
+p
+  margin: $standard-margin 0
+  line-height: 18px
+  .image-align-right
+    margin-top: 0
+input
+  background: #333
+  color: #eee
+  border: 0
+  padding: 5px 10px
+  text-transform: uppercase
+  letter-spacing: 1px
+  font-weight: bold
+  font-size: 12px !important
+  @include border-radius($button-radius)
+  @include linear-gradient(color-stops(#111 5%, #555 45%, #111))
+  display: block
+  &:hover
+    @include linear-gradient(color-stops(#111 5%, #333 45%, #111))
+
+
+.image-align-right
+  float: right
+  vertical-align: middle
+  margin: $standard-margin
+.image-wrapper
+  position: relative
+  background: $image-wrapper-background-color
+  padding: $image-wrapper-padding
+  display: table
+  img
+    display: block
+  .blackout
+    background: #000
+    position: absolute
+    top: 0
+    left: 0
+    color: #fff
+    display: table-cell
+    vertical-align: middle
+    text-align: center

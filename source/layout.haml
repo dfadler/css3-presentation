@@ -1,0 +1,11 @@
+!!! 5
+%html
+  %head
+    %meta{ :charset => "utf-8" }
+    =stylesheet_link_tag "site", "normalize"
+    =yield_content :head
+  
+  %body{ :class => page_classes }
+    #main{ :role => "main" }
+      =yield
+  =javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js", "site"
