@@ -1,0 +1,18 @@
+.borders &
+  .round
+    +border-radius(30px)
+    background: #eee
+    +box-shadow(0 0 20px rgba(0, 0, 0, .3) inset)
+    color: #555
+    padding: 15px
+    font: bold 2em $oswald
+    text-align: center
+  #shapes
+    +clearfix()
+    margin-bottom: -70px
+    li
+      float: left
+      width: 200px
+      height: 200px
+      +display-box
+      +box-align(top)

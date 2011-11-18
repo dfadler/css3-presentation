@@ -1,0 +1,32 @@
+-content_for :head do
+  %title Shadows | Quickest Way To Make A Bad Design Worse
+%h1 The Shadow Knows
+%h2 Box Shadows
+%p 
+  #{image_tag('shadow.jpg', :height => '400', :width => '370', :class => 'shadow image-align-right')} Most designers will probably be gagging at the garish use of drop shadow on this classic piece of American radio history. Just as radio had a lot going on that the listener might not notice so does this page.
+  %br
+  %input{ :type => 'button', :value => 'Toggle #main Shadows', :class => "toggle-shadows" }
+%p 
+  The <em>box-shadow</em> module is more than just a simple drop shadow it also allows for inset and even multiple shadows on the same element.
+  %br
+  %input{ :type => 'button', :value => 'Toggle Vibrant Shadows', :class => "toggle-vibrant-shadows", :title => 'The buttons have an inset shadow!' }
+%h2 Browser Support
+%p Starting with v9 Internet Explorer supports the box shadow, all other modern browsers offer fairly decent support even when going back multiple versions.
+.flex-box
+  .box-1
+    %h2 Cross Browser Support
+    %p There have been numerous methods over the years for achieving drop shadows in IE7-8 but like round corners they could quickely become a bother to maintain because of the complex positioning. I personally recommend #{ link_to('CSS3 Pie', 'http://css3pie.com/')} if you're interested in a javascript solution.
+  .box-2
+    %h2 There are differences
+    %p Even though there is fairly broad support for the box-shadow you should be aware that there can be noticeable differences in bolder usage of shadows.
+    .box-3
+      .box-4
+        %h3 Webkit Shadow
+        %p #{image_tag('webkit-shadow.png')}
+      .box-4
+        %h3 IE9 Shadow
+        %p #{image_tag('ie9-shadow.png', :style => "width: 192px;")}
+%h1.text-shadow Text Shadows
+%p While not a CSS3 feature it might as well be with the lack of attention IE is showing it. Not even in IE9 do you have access to the text shadow which is a real shame since most other browser have had it for years. In modern browsers outside of IE you can use up to ten shadows on one element.
+%h2.fire Text Shadow Are Hot
+%p #{ link_to('Fire CSS Found At', 'http://www.css3.info/preview/text-shadow/')}

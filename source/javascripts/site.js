@@ -68,4 +68,24 @@ $(function(){
 			});
 	}
 	
+	// Shadows Page
+	if($('body').hasClass('shadows')) {
+		$('.toggle-shadows')
+			.bind('click', function() {
+				if($('#main').hasClass('shadow')) {
+					$('#main')
+						.removeClass('shadow')
+						.addClass('no-shadow');
+				} else {
+					$('#main')
+						.addClass('shadow')
+						.removeClass('no-shadow');
+				}
+			});
+		$('.toggle-vibrant-shadows')
+			.bind('click', function() {
+				$('#main')
+					.toggleClass('vibrant-shadow');
+			});
+	}
 });

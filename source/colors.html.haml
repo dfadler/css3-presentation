@@ -1,7 +1,7 @@
 - content_for :head do
   %title RGB(A) HSL(A) | Hex A Pox On You...
 %h1 Color &amp; The Web
-%p There are number of ways to define color on the web, most notable named and Hex. Named is common because of its familiarity while hex is because of its terse shorthand but there are two other standards for which you can define colors in modern browsers"HSL &amp RGB".
+%p There are number of ways to define color on the web, most notable named and <em>Hex</em>. Named is common because of its familiarity while <em>Hex</em> is because of its terse shorthand but there are two other standards for which you can define colors in modern browsers <em>HSL</em> &amp; <em>RGB</em>.
 %section.banner-box
   .banner
     %span
@@ -15,7 +15,7 @@
       color: rgb(0, 0, 0); /* RGB */ 
       color: hsl(0, 0, 0); /* HSL */
     }
-%p Unless you are taking advantage of the <em>alpha value</em> in rgb or hsl there is no reason to use any method over another <strong>outside of browser support</strong>. 
+%p Unless you are taking advantage of the <em>alpha value</em> in <em>RGB</em> or <em>HSL</em> there is no reason to use any method over another <strong>outside of browser support</strong>. You might find it easier to use <em>RGB</em> over <em>HSL</em> since you can rely on the Photoshop <em>RGB</em> values to be accurate on the web whereas <em>HSL</em> <u>will be different</u>.
 %hgroup 
   %h1 Something New Has Been Added
   %p
@@ -55,7 +55,7 @@
     
   }
 %p
-  It should be noted that if you try to pass jquery a hsla second and third value as a fixed number instead of a percent it will fail silently. There is already an existing solution for #{link_to('animating colors in jquery', 'http://plugins.jquery.com/project/color')} this does not however work for rgba or hsla, luckily a #{link_to('solution', 'http://blog.jquery.com/2011/05/31/jquery-color-v2-beta-1-released/')} for that exists as well. 
+  It should be noted that if you try to pass Jquery a <em>HSLA</em> second and third value as a fixed number instead of a percent it will fail silently. There is already an existing solution for #{link_to('animating colors in Jquery', 'http://plugins.jquery.com/project/color')} this does not however work for <em>RGBA</em> or <em>HSLA</em>, luckily a #{link_to('solution', 'http://blog.jquery.com/2011/05/31/jquery-color-v2-beta-1-released/')} for that exists as well. 
 %h2 Example
 %h3 Incorrect
 :coderay
@@ -80,4 +80,4 @@
   %cite  - #{ link_to('http://css-tricks.com/6565-yay-for-hsla/', 'http://css-tricks.com/6565-yay-for-hsla/') }
       
 %h1 Cross Browser Solutions
-%p I found a few solutions to the problem but each has its own caveats. You can find out about possible solutions by reading the following <em>Stack Overflow</em> article #{link_to('Cross browser rgba background', 'http://stackoverflow.com/questions/4792090/cross-browser-rgba-background')}. If none of the solutions in the article work for your situation #{link_to('CSS3 PIE', "http://css3pie.com/documentation/supported-css3-features/#rgba") } might fit your particular needs.
+%p I found a few solutions to the problem but each has its own caveats. You can find out about possible solutions by reading the following <em>Stack Overflow</em> article #{link_to('Cross browser RGBA background', 'http://stackoverflow.com/questions/4792090/cross-browser-rgba-background')}. If none of the solutions in the article work for your situation #{link_to('CSS3 PIE', "http://css3pie.com/documentation/supported-css3-features/#rgba") } might fit your particular needs.

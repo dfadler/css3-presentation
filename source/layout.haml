@@ -2,10 +2,10 @@
 %html
   %head
     %meta{ :charset => "utf-8" }
-    =stylesheet_link_tag "site", "coderay", "http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Oswald|Rock+Salt", "normalize"
+    =stylesheet_link_tag "site", "coderay", "http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic|Oswald|Rock+Salt", "normalize", "shapes"
     =yield_content :head
   
   %body{ :class => page_classes }
-    #main{ :role => "main" }
+    #main{ :role => "main", :class => 'shadow' }
       =yield
   =javascript_include_tag "https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js", "site"

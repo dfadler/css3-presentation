@@ -4,7 +4,6 @@
 $ptserif: 'PT Sans', sans-serif
 $oswald: 'Oswald', sans-serif
 $rocksalt: 'Rock Salt', cursive
-
 $image-wrapper-background-color: #eee
 $image-wrapper-padding: 7px
 $standard-line-height: 20px
@@ -13,28 +12,31 @@ $default-radius: 3px
 
 // Structure
 body
-  background: #222
+  background: #333
   color: #333
   font-family: $ptserif
 #main
-  width: 600px
+  width: 650px
   margin: 50px auto
   padding: 50px
-  background: #fff
-  +box-shadow(0 1px 25px rgba(0, 0, 0, .3), 0 0 50px rgba(255, 254, 238, .2) inset)
+  background: #efefef
   +border-radius($default-radius)
   +clearfix()
-  +background-image(linear-gradient(left, rgba(255, 254, 238, .2), #fff 7%, #efefef 93%))
-
-
+  +background-image(linear-gradient(right, rgba(255, 254, 238, .2), #fff 7%, #efefef 93%))
+  &.shadow
+    +box-shadow(0 1px 100px rgba(0, 0, 0, .6), 0 0 50px rgba(255, 254, 238, .6) inset, 0 0 50px rgba(0, 0, 0, .4) inset)
+  &.no-shadow
+    +box-shadow(0 0px 0px rgba(0, 0, 0, 0), 0 0 0px rgba(0, 0, 0, 0) inset, 0 0 0px rrgba(0, 0, 0, 0) inset)
+  &.vibrant-shadow
+    +box-shadow(rgba(blue, .7) 0 0 75px, rgba(red, 1) 0 0 50px, rgba(green, .7) 0 0 3px 21px inset, rgba(black, 1) 0 0 0px 11px inset)
   // Interface Styling
   .CodeRay
-    +box-shadow(0px 0px 1px #eee)
-    +background-image(linear-gradient(45deg, rgba(255, 255, 255, 0.0), #eee))
+    +box-shadow(0px 0px 1px #dfdfdf)
+    +background-image(linear-gradient(right, #efefef, rgba(255, 255, 255, 0.0)))
     +transition(background-color .5s ease-out)
-    background-color: #fff
+    background-color: #efefef
     &:hover
-      background-color: #efefef
+      background-color: #fff
   .banner-box
     position: relative
     .banner
@@ -67,6 +69,14 @@ body
     p
       margin: 0
       margin-top: $standard-margin / 2
+  .center
+    text-align: center
+  .float-right
+    float: right
+  .shadow
+    +box-shadow(0px 0px 20px #666)
+  iframe
+    margin: $standard-margin 0
 
   h1, h2, h3, h4, h5, h6
     font-family: $oswald
@@ -77,6 +87,7 @@ body
     font-size: 2em
   h2
     font-size: 1.5em
+    line-height: $standard-line-height * 1.5
     margin-bottom: $standard-margin
   h3
     font-weight: bold
@@ -107,13 +118,13 @@ body
     +border-radius($default-radius)
     display: block
     +transition(background-color .5s ease-out)
+    +box-shadow(0 0 20px rgba(0, 0, 0, .3) inset)
     &:hover
       background: #cc0000
 
 
   .image-align-right
     float: right
-    vertical-align: middle
     margin: $standard-margin 0 $standard-margin $standard-margin
   .image-wrapper
     position: relative
@@ -136,9 +147,9 @@ body
       padding: 0 50px
   blockquote
     +box-shadow(0px 0px 1px #eee)
-    +background-image(linear-gradient(45deg, rgba(255, 255, 255, 0.0), #eee))
+    +background-image(linear-gradient(right, #efefef, rgba(255, 255, 255, 0.0)))
     +transition(background-color .5s ease-out)
-    background-color: #fff
+    background-color: #efefef
     padding: 25px 60px
     margin: $standard-margin 0
     color: #555
@@ -169,7 +180,9 @@ body
       top: -50px
       right: 0px
     &:hover
-      background-color: #eee
+      background-color: #fff
+      &:before
+        color: #eee
     cite
       font-style: italic
       font-size: 12px
@@ -186,3 +199,9 @@ body
 
   // Colors Page
   @import colors
+
+  // Borders Page
+  @import borders
+  
+  // Shadows Page
+  @import shadows
