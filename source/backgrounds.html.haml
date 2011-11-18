@@ -1,0 +1,12 @@
+-content_for :head do
+    %title Backgrounds | You Would Think It Boring But...
+%h1 Gradients
+%p Without filters there is currently no support for CSS gradients in IE7-8, IE9 does support linear gradients if you leverage <em>SVG</em>. Outside of filters and SVG there is also #{link_to('CSS3 Pie', 'http://css3pie.com/documentation/supported-css3-features/#gradients')} but at this time it might not be a good fit for many projects.
+%h1 Multiple Backgrounds
+%p Multiple background images are supported on all modern browser and back a few generations with the exception of IE7-8. If you wish to leverage multiple background in IE7-8 you can leverage #{link_to('CSS3 Pie', 'http://css3pie.com/documentation/supported-css3-features/#pie-background')}.
+%h1 Background Size
+%p The background size definition is supported by all modern browser with the exception of IE7-8. There are some ugly fallbacks for IE7-8 but they don't produce helpful results. During the HOK Prototype I came up with a little script that will calculate the image size and positioning on resize and or load but it not quite production ready yet.
+%h1 Mask Image
+%p This looks to be a pretty cutting edge feature that only newer browsers support. http://trentwalton.com/2011/05/19/mask-image-text/ Need to research this 
+%h1 Background Clip http://www.impressivewebs.com/css3-click-chart/
+%p Need to research this http://trentwalton.com/2010/03/24/css3-background-clip-text/
