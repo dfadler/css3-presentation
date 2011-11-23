@@ -9,12 +9,38 @@ $image-wrapper-padding: 7px
 $standard-line-height: 20px
 $standard-margin: 15px
 $default-radius: 3px
+$default-background-color: #333
 
 // Structure
 body
-  background: #333
+  background-color: $default-background-color
   color: #333
   font-family: $ptserif
+  &.full-background
+    background: url('http://placekitten.com/2000/2000') $default-background-color no-repeat center center fixed
+    background-size: cover
+  &.scaled-background
+    background: url('http://placekitten.com/2000/2000') $default-background-color no-repeat 0 0 fixed
+    background-size:  100px 100px
+  &.background-1
+    background: url('http://placekitten.com/2000/2000') $default-background-color no-repeat center center fixed
+    background-size: cover
+  &.background-2
+    background: url('http://placekitten.com/1000/1000') 0 0 no-repeat fixed, url('http://placekitten.com/2000/2000') no-repeat center center fixed
+    background-color: $default-background-color
+    background-size: 100px 100px, cover
+  &.background-3
+    background: url('http://placekitten.com/1000/1000') 0 0 no-repeat fixed, url('http://placekitten.com/400/400') no-repeat 100% 0 fixed, url('http://placekitten.com/2000/2000') no-repeat center center fixed
+    background-color: $default-background-color
+    background-size: 100px 100px, 100px 100px, cover
+  &.background-4
+    background: url('http://placekitten.com/1000/1000') 0 0 no-repeat fixed, url('http://placekitten.com/400/400') no-repeat 100% 0 fixed, url('http://placekitten.com/1500/1500') no-repeat 0 100% fixed, url('http://placekitten.com/2000/2000') no-repeat center center fixed
+    background-color: $default-background-color
+    background-size: 100px 100px, 100px 100px, 100px 100px, cover
+  &.background-5
+    background: url('http://placekitten.com/1000/1000') 0 0 no-repeat fixed, url('http://placekitten.com/400/400') no-repeat 100% 0 fixed, url('http://placekitten.com/1500/1500') no-repeat 0 100% fixed, url('http://placekitten.com/700/700') no-repeat 100% 100% fixed, url('http://placekitten.com/2000/2000') no-repeat center center fixed
+    background-color: $default-background-color
+    background-size: 100px 100px, 100px 100px, 100px 100px, 100px 100px, cover
 #main
   width: 650px
   margin: 50px auto
@@ -22,13 +48,18 @@ body
   background: #efefef
   +border-radius($default-radius)
   +clearfix()
-  +background-image(linear-gradient(right, rgba(255, 254, 238, .2), #fff 7%, #efefef 93%))
   &.shadow
     +box-shadow(0 1px 100px rgba(0, 0, 0, .6), 0 0 50px rgba(255, 254, 238, .6) inset, 0 0 50px rgba(0, 0, 0, .4) inset)
   &.no-shadow
     +box-shadow(0 0px 0px rgba(0, 0, 0, 0), 0 0 0px rgba(0, 0, 0, 0) inset, 0 0 0px rrgba(0, 0, 0, 0) inset)
   &.vibrant-shadow
     +box-shadow(rgba(blue, .7) 0 0 75px, rgba(red, 1) 0 0 50px, rgba(green, .7) 0 0 3px 21px inset, rgba(black, 1) 0 0 0px 11px inset)
+  &.gradient
+    +background-image(linear-gradient(right, rgba(255, 254, 238, .2), #fff 7%, #efefef 93%))
+  &.no-gradient
+    +background-image(linear-gradient(right, rgba(255, 254, 238, .0), rgba(255, 254, 238, .0) 7%, rgba(255, 254, 238, .0) 93%))
+  &.vibrant-gradient
+    +background-image(linear-gradient(right, rgba(blue, .5), rgba(red, .5) 7%, rgba(green, .5) 93%))
   
   // Interface Styling
   
@@ -127,6 +158,8 @@ body
     +box-shadow(0 0 20px rgba(0, 0, 0, .3) inset)
     &:hover
       background: #cc0000
+    &.inline 
+      display: inline-block
 
 
   .image-align-right
@@ -211,3 +244,6 @@ body
   
   // Shadows Page
   @import shadows
+  
+  // Backgrounds Page
+  @import backgrounds

@@ -88,4 +88,64 @@ $(function(){
 					.toggleClass('vibrant-shadow');
 			});
 	}
+	
+	// Backgrounds Page
+	if($('body').hasClass('backgrounds')) {
+		
+		// Gradients
+		$('.toggle-gradient')
+			.bind('click', function() {
+				if($('#main').hasClass('gradient')) {
+					$('#main')
+						.removeClass('gradient')
+						.addClass('no-gradient');
+				} else {
+					$('#main')
+						.addClass('gradient')
+						.removeClass('no-gradient');
+				}
+			});
+		$('.toggle-vibrant-gradient')
+			.bind('click', function() {
+				$('#main')
+					.toggleClass('vibrant-gradient');
+			});
+			
+		// Background Size
+		$('.toggle-full-background')
+			.bind('click', function() {
+				$('body')
+					.toggleClass('full-background');
+			});
+		$('.toggle-scaled-background')
+			.bind('click', function() {
+				$('body')
+					.toggleClass('scaled-background');
+			});
+			
+		// Multiple Backgrounds	
+
+		$('.toggle-background-1')
+			.bind('click', function() {
+				$('body')
+					.toggleClass('background-2');
+			});
+		$('.toggle-background-2')
+			.bind('click', function() {
+				$('body')
+					.toggleClass('background-3');
+			});
+		$('.toggle-background-3')
+			.bind('click', function() {
+				$('body')
+					.toggleClass('background-4');
+			});
+		$('.toggle-background-4')
+			.bind('click', function() {
+				$('body')
+					.toggleClass('background-5');
+			});
+			// toggle-scaled-background-1
+	}
+	
 });

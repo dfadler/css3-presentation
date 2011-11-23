@@ -1,12 +1,117 @@
 -content_for :head do
-    %title Backgrounds | You Would Think It Boring But...
+  %title Backgrounds | You Would Think It Boring But...
 %h1 Gradients
-%p Without filters there is currently no support for CSS gradients in IE7-8, IE9 does support linear gradients if you leverage <em>SVG</em>. Outside of filters and SVG there is also #{link_to('CSS3 Pie', 'http://css3pie.com/documentation/supported-css3-features/#gradients')} but at this time it might not be a good fit for many projects.
-%h1 Multiple Backgrounds
-%p Multiple background images are supported on all modern browser and back a few generations with the exception of IE7-8. If you wish to leverage multiple background in IE7-8 you can leverage #{link_to('CSS3 Pie', 'http://css3pie.com/documentation/supported-css3-features/#pie-background')}.
+%p 
+  Using gradients on the web is nothing new, <em>24-bit pngs</em> have aided us for years in creating gradations of color as well as drop shadows. While this was a boon to the industry it lacked the flexibility that growing web standard proposed. In the coming days gradients will be live and flexible allowing us to us to use them in ways never seen before.
+%p
+  %input{ :type => 'button', :value => 'Toggle #main Gradient', :class => "toggle-gradient inline" } 
+  %input{ :type => 'button', :value => 'Toggle Vibrant Gradient', :class => "toggle-vibrant-gradient inline" }
+%p
+  To get a better idea of whats possible check out Colorzilla's #{ link_to('The Ultimate CSS Gradient Generator', 'http://www.colorzilla.com/gradient-editor/', :target => '_blank') } which will allow you to create CSS gradients using a fairly intuitive editor. There is also a great article called #{ link_to('Speed Up with CSS3 Gradients', 'http://css-tricks.com/5700-css3-gradients/', :target => '_blank')} that will go into some of the finer points.
+%h2 Browser Support
+%p Without filters there is currently no support for CSS gradients in IE7-8, IE9 does support multi-stop linear gradients if you leverage <em>SVG</em>. Prior to the more recent Webkit releases Safari and Chrome used a method outside the spec which will require you to use the legacy syntax as well as the modern if you wish to support them all.
+%h3 Old Webkit
+:coderay
+  #!css
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#2F2727), to(#1a82f7));
+%h3 New Webkit
+:coderay
+  #!css
+  background-image: -webkit-linear-gradient(top, #2F2727, #1a82f7);
+%h2 Cross Browser Solution
+%p Outside of filters and <em>SVG</em> there is also #{link_to('CSS3 Pie', 'http://css3pie.com/documentation/supported-css3-features/#gradients', :target => '_blank')} but at this time it might not be a good fit for many projects.
 %h1 Background Size
-%p The background size definition is supported by all modern browser with the exception of IE7-8. There are some ugly fallbacks for IE7-8 but they don't produce helpful results. During the HOK Prototype I came up with a little script that will calculate the image size and positioning on resize and or load but it not quite production ready yet.
+%p Lately there has been a lot of sites using full size background images that scale with the window, this is achieved by setting the <em>background-size</em> property to cover.
+%h3 CSS for background property
+:coderay
+  #!css
+  #element {
+    background: url(images/bg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+%p
+  %input{ :type => 'button', :value => 'Toggle Full Background', :class => "toggle-full-background inline" } 
+  %input{ :type => 'button', :value => 'Toggle Scaled Background', :class => "toggle-scaled-background inline" }
+%h2 Browser Support
+%p The background size property is supported by all modern browser with the exception of IE7-8. 
+%h2 Cross Browser Solutions
+%p #{link_to('CSS Tricks', 'http://css-tricks.com/3458-perfect-full-page-background-image/')} has a tutorial that might be of some help in supporting IE7-8 but it wont be perfect for all situations. In the event that the IE filters don't fit your needs you could also use javascript to calculate the image size.
+%h3 Javascript to get calculate the dimensions of an image while keeping its aspect ratio
+:coderay
+  #!javascript
+  for (objectWidth = windowWidth; objectHeight <= windowHeight; objectWidth += 1) {
+             
+            $(object)
+                .css({
+                    'width': objectWidth
+                });
+        }
+%p It should be noted that a method like the above will require you to add the image to the document, then reposition it after its been sized.
+%h1 Multiple Backgrounds
+%section.flex-box
+  %section.box-1
+    %p Some of the changes in CSS3 offer such a radical departure from tradition that its hard to anticipate the long term ramifications. With a combination of multiple background images, positioning, and a little javascript you could probably make a fairly interesting mosaic. What about a transparent png as a mask with the background images animated around the screen?
+  %section.box-2
+    %p 
+      %input{ :type => 'button', :value => 'Toggle Background 1', :class => "toggle-full-background inline" } 
+    %p
+      %input{ :type => 'button', :value => 'Toggle Background 2', :class => "toggle-background-1 inline" }
+    %p
+      %input{ :type => 'button', :value => 'Toggle Background 3', :class => "toggle-background-2 inline" }
+    %p
+      %input{ :type => 'button', :value => 'Toggle Background 4', :class => "toggle-background-3 inline" }
+    %p
+      %input{ :type => 'button', :value => 'Toggle Background 5', :class => "toggle-background-4 inline" }
+%h2 Something Practical
+%p My dreaming aside there are practical reasons for using multiple backgrounds. First this would a eliminate the need for extra markup and styling to achieve the same background this page has with all five toggled.
+%h3 Without Multiple Backgrounds
+:coderay
+  #!html
+  <body>
+    <div id="one"></div>
+    <div id="two"></div>
+    <div id="three"></div>
+    <div id="four"></div>
+  </body>
+:coderay
+  #!css
+  body {
+    background: url("http://placekitten.com/2000/2000") no-repeat center center fixed;
+    background-color: #333333;
+  }
+  .one {
+    background: url("http://placekitten.com/1000/1000") 0 0 no-repeat fixed;
+  }
+  .two {
+    background: url("http://placekitten.com/400/400") no-repeat 100% 0 fixed;
+  }
+  .three {
+    background: url("http://placekitten.com/1500/1500") no-repeat 0 100% fixed;
+  }
+  .four {
+    background: url("http://placekitten.com/700/700") no-repeat 100% 100% fixed;
+  }
+%h3 With Multiple Backgrounds
+:coderay
+  #!html
+    <body></body>
+:coderay
+  #!css
+  body {
+    background: url("http://placekitten.com/1000/1000") 0 0 no-repeat fixed, url("http://placekitten.com/400/400") no-repeat 100% 0 fixed, url("http://placekitten.com/1500/1500") no-repeat 0 100% fixed, url("http://placekitten.com/700/700") no-repeat 100% 100% fixed, url("http://placekitten.com/2000/2000") no-repeat center center fixed;
+    background-color: #333333;
+  }
+%h2 Browser Support
+%p Multiple background images are supported by all modern browser and back a few generations with the exception of IE7-8. I did find an #{ link_to('article', 'http://76.74.170.157/post_Cross_Browser_Multi_background_images__including_I-16839.html')} that shows you how to achieve multiple backgrounds in IE7-8 using filters but I've yet to test it and have had issues with using the IE filters.
+%h2 Cross Browser Solution
+%p If you wish to use multiple background in IE7-8 you can leverage #{link_to('CSS3 Pie', 'http://css3pie.com/documentation/supported-css3-features/#pie-background', :target => '_blank')}.
 %h1 Mask Image
-%p This looks to be a pretty cutting edge feature that only newer browsers support. http://trentwalton.com/2011/05/19/mask-image-text/ Need to research this 
-%h1 Background Clip http://www.impressivewebs.com/css3-click-chart/
+#mask{ :style => 'padding: 10px;'}
+  %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+%p This looks to be a pretty cutting edge feature that only newer browsers support. http://trentwalton.com/2011/05/19/mask-image-text/ Need to research this.
+
+%h1.clear Background Clip http://www.impressivewebs.com/css3-click-chart/
 %p Need to research this http://trentwalton.com/2010/03/24/css3-background-clip-text/
