@@ -1,0 +1,52 @@
+%h2 Can I use
+http://caniuse.com/
+
+http://caniuse.com/#search=background-size
+http://html5readiness.com/
+
+http://addyosmani.com/blog/css3transitions-jquery/
+CSS Transition support
+Below we can see a list of the browsers that have been confirmed as supporting CSS3 transitions.
+
+Google Chrome 9+
+Opera 10.5+
+Firefox 4+
+Safari 3.2+
+Although this list is promising, one of the main issues with implementing CSS3 transitions now is that support for them is not what could be described as fully cross-browser compatible. As they're a relatively recent feature, users who are still on older browsers (IE6+, Firefox 3 and below) won't be able to view them as animations and this can be challenging if you're aiming for a consistent user-experience. There are however solutions to this problem and we'll be taking a look at some of them in today's post.
+
+Cross-browser Transitions with jQuery
+If CSS3 transitions aren't going to be available, the next obvious language to fall back on is JavaScript. Using Modernizr, a popular feature detection tool, we can detect support for CSS3 transitions quite easily. We are then able to serve up JavaScript powered animations to browsers which don't support it. 
+
+Next, rather than handling all of the cross-browser challenges of smooth animation ourselves, we can make use of jQuery's .animate() features to provide the same animation effect if it can't be done in the current browser using CSS3. The only problem that then remains is getting .animate() to use CSS3 transitions if they're supported and easily fallback to jQuery if they're not. So what do we need to make this happen?
+
+http://muddledramblings.com/table-of-css3-border-radius-compliance/
+http://muddledramblings.com/table-of-css3-color-specifiers/
+
+
+http://webdesignerwall.com/tutorials/cross-browser-css-gradient
+Internet Explorer Limitations
+Internet Explorer gradient filter doesn't support color-stop, gradient angle, and radial gradient. That means you can only specify either horizontal or vertical linear gradient with 2 colors: StartColorStr and EndColorStr.
+
+Final Remarks
+Please note not all browsers support CSS gradient. To be safe, you shouldn't rely on CSS gradient when coding the layout. It should only be used for enhancing the layout.
+http://www.codeforest.net/recreating-tumblr%E2%80%99s-%E2%80%9Cupdating-%E2%80%9D-page-using-pure-css3-with-fallbacks-for-older-browsers
+
+
+But there is a catch. We increased the document size for browsers that don’t support CSS3. They’ll have to download all images and a new, bigger CSS. And this means that the real number of KB saved depends on percentage of browsers the visitors use. If Safari, Firefox and Chrome (latest versions) don’t represent a greatest part, we didn’t actually saved bandwidth usage, but we’ve increased it.
+PROS:
+Faster loading times.
+Less bandwidth usage.
+Hype generation?
+CONS:
+It takes more time to create the effect using CSS.
+Rounded borders are a bit rough on the edges.
+Pins are lacking fine touches – due to a border-radius restriction you can’t set border radius on divs smaller than 4px.
+CSS validation fails miserably.
+CSS3 specification isn’t done yet and it could change; this would mean that developer has to revisit and rewrite the code.
+Double work. You still have to create images version for browsers that don’t support all CSS3 rules.
+CONCLUSION:
+This analysis is completely useless (correct me if I’m wrong), but it was fun and challenging to make. If nothing else, it shows one practical scenario of progressive enhancement using CSS3 techniques.
+For this to be worth implementing, the site traffic should be really really high, and even then it would be questionable if it’s worth hassling and doing all the extra work.
+
+
+http://www.impressivewebs.com/css3-click-chart/

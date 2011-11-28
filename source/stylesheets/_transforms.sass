@@ -1,0 +1,36 @@
+.basic
+  +box-styling
+  & + .basic
+    margin-left: 10px
+  width: 90px
+  float: left
+#skew
+  +skew(35deg)
+#scale
+  +scale(1, 0.5)
+#rotate
+  +rotate(45deg)
+#translate
+  +translate(40px, 20px)
+#rotate-skew-scale-translate
+  +simple-transform(1.2, 40deg, 50px, -20px, 30deg, 0)
+#trans3d
+  +clearfix
+  div
+    +box-styling
+    & + div
+      margin-left: 1%
+    width: 29%
+    float: left
+    +transition(all .5s ease-in-out)
+    +perspective(800)
+    +perspective-origin(50% 100px)
+    p
+      margin: 0
+  &:hover
+    #one
+      +rotateX(180deg)
+    #two
+      +rotateY(180deg)
+    #three
+      +rotateZ(180deg)

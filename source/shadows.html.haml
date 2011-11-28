@@ -11,7 +11,10 @@
   %br
   %input{ :type => 'button', :value => 'Toggle Vibrant Shadows', :class => "toggle-vibrant-shadows", :title => 'The buttons have an inset shadow!' }
 %h2 Browser Support
-%p Starting with v9 Internet Explorer supports the box shadow, all other modern browsers offer fairly decent support even when going back multiple versions.
+%p 
+  Starting with 
+  %strong v9 Internet Explorer 
+  supports the box shadow, all other modern browsers offer fairly decent support even when going back multiple versions.
 .flex-box
   .box-1
     %h2 Cross Browser Support
@@ -27,6 +30,11 @@
         %h3 IE9 Shadow
         %p #{image_tag('ie9-shadow.png', :style => "width: 192px;")}
 %h1.text-shadow Text Shadows
-%p While not a CSS3 feature it might as well be with the lack of attention IE is showing it. Not even in IE9 do you have access to the text shadow which is a real shame since most other browsers have had it for years. In modern browsers outside of IE you can use up to ten shadows on one element.
+%p 
+  While not a 
+  %em CSS3 
+  feature it might as well be with the lack of attention IE is showing it. 
+  %strong Not even in IE9 
+  do you have access to the text shadow which is a real shame since most other browsers have had it for years. In modern browsers outside of IE you can use up to ten shadows on one element.
 %h2.fire Text Shadows Are Hot
-%p #{ link_to('Fire CSS Found At', 'http://www.css3.info/preview/text-shadow/')}
+%p #{ link_to('Fire CSS Found At', 'http://www.css3.info/preview/text-shadow/', :target => '_blank')}
