@@ -3,6 +3,12 @@ $(function(){
 	// Forces strict mode
 	'use strict';
 	
+	// Opens External Links In New Window
+	$("a[href^='http://']")
+		.attr(
+			"target","_blank"
+		);
+
 	// Colors Page
 	if($('body').hasClass('colors')) {
 		

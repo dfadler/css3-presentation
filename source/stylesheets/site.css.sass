@@ -11,6 +11,11 @@ $standard-line-height: 20px
 $standard-margin: 15px
 $default-radius: 3px
 $default-background-color: #333
+$default-font-color: #484e46
+$default-heading-color: #363427
+$default-content-width: 650px
+$default-content-padding: 50px
+$side-width: 250px
 
 // Mixins
 @mixin box-styling
@@ -18,11 +23,32 @@ $default-background-color: #333
   padding: 10px
   margin: 10px 0
   background: rgba(white, 1)
+// Elements
+a
+  +transition(color .5s ease-out)
+  font-weight: bold
+  color: $default-font-color
+  &:hover
+    color: #cc0000
 
-// Structure
+// Layout
+#wrapper
+  width: $default-content-width + $side-width + ($default-content-padding * 2)
+  margin: $standard-margin auto
+  //+box-align(middlek)
+  +legacy-pie-clearfix()
+  #side
+    float: left
+    width: $side-width
+  #main
+    float: right
+    width: $default-content-width
+
+
+// Body
 body
   background-color: $default-background-color
-  color: #333
+  color: $default-font-color
   font-family: $ptserif
   &.full-background
     background: url('http://placekitten.com/2000/2000') $default-background-color no-repeat center center fixed
@@ -49,13 +75,18 @@ body
     background: url('http://placekitten.com/1000/1000') 0 0 no-repeat fixed, url('http://placekitten.com/400/400') no-repeat 100% 0 fixed, url('http://placekitten.com/1500/1500') no-repeat 0 100% fixed, url('http://placekitten.com/700/700') no-repeat 100% 100% fixed, url('http://placekitten.com/2000/2000') no-repeat center center fixed
     background-color: $default-background-color
     background-size: 100px 100px, 100px 100px, 100px 100px, 100px 100px, cover
+
+// Navigation
+@import navigation
+
+// Main Content Section
 #main
-  width: 650px
-  margin: 50px auto
-  padding: 50px
+  width: $default-content-width
+  margin: $standard-margin auto $default-content-padding
+  padding: $default-content-padding
   background: #efefef
   +border-radius($default-radius)
-  +clearfix()
+  //+clearfix()
   &.shadow
     +box-shadow(0 1px 100px rgba(0, 0, 0, .6), 0 0 50px rgba(255, 254, 238, .6) inset, 0 0 50px rgba(0, 0, 0, .4) inset)
   &.no-shadow
@@ -70,9 +101,6 @@ body
     +background-image(linear-gradient(right, rgba(blue, .5), rgba(red, .5) 7%, rgba(green, .5) 93%))
   
   // Interface Styling
-  
-  @import navigation
-  
   .CodeRay
     +box-shadow(0px 0px 1px #dfdfdf)
     +background-image(linear-gradient(right, #efefef, rgba(255, 255, 255, 0.0)))
@@ -121,25 +149,34 @@ body
     +box-shadow(0px 0px 20px #666)
   iframe
     margin: $standard-margin 0
+  strong
+    color: $default-heading-color
 
   h1, h2, h3, h4, h5, h6
+    color: $default-heading-color
     font-family: $oswald
     margin: ($standard-margin * 2) 0
     &:first-child
       margin-top: 0
+    &:last-child
+      margin-bottom: 0
   h1
     font-size: 2em
     text-transform: uppercase
-    &:last-child
-      margin-bottom: 0
   h2
     font-size: 1.5em
     line-height: $standard-line-height * 1.5
-    margin-bottom: $standard-margin
+    margin: $standard-margin * 1.5 0
     text-transform: capitalize
   h3
-    font-weight: bold
+    text-transform: capitalize
+    font-size: 1.2em
+    margin: $standard-margin * 1.2 0
+  h4
     font-family: $ptserif
+    font-size: 1em
+    text-transform: uppercase
+    font-weight: bold
     margin: $standard-margin 0
   p
     margin: $standard-margin 0
@@ -148,12 +185,6 @@ body
       margin-top: 0
     &:last-child
       margin-bottom: 0
-  a
-    +transition(color .5s ease-out)
-    font-weight: bold
-    color: #111
-    &:hover
-      color: #cc0000
   input
     background: #111
     color: #eee
@@ -175,7 +206,10 @@ body
     list-style: square
     line-height: $standard-line-height
     li
-      //list-style: square
+      font-size: .95em
+      margin: ($standard-margin / 2) 0
+    > li:last-child
+      margin-bottom: 0
   .image-align-right
     float: right
     margin: $standard-margin 0 $standard-margin $standard-margin
@@ -240,8 +274,8 @@ body
       font-style: italic
       font-size: 12px
     a
-      +transition(color .5s ease-out)
       color: #555
+      +transition(color .5s ease-out)
       &:hover
         color: #cc0000
     p
@@ -249,6 +283,11 @@ body
         margin-top: 0
       &:last-child
         margin-bottom: 0
+  // Image Styling
+  @import images
+  
+  // Flex-box
+  @import flex-box
         
   // Colors Page
   @import colors

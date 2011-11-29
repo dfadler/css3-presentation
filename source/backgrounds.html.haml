@@ -2,12 +2,12 @@
   %title Backgrounds | You Would Think It Boring But...
 %h1 Gradients
 %p 
-  Using gradients on the web is nothing new, <em>24-bit pngs</em> have aided us for years in creating gradations of color as well as #{ link_to('drop shadows', 'shadows.html', :target => '_blank')}. While this was a boon to the industry it lacked the flexibility that growing web standard proposed. In the coming days gradients will be live and flexible allowing us to us to use them in ways never seen before.
+  Using gradients on the web is nothing new, <em>24-bit pngs</em> have aided us for years in creating gradations of color as well as #{ link_to('drop shadows', 'shadows.html')}. While this was a boon to the industry it lacked the flexibility that growing web standard proposed. In the coming days gradients will be live and flexible allowing us to us to use them in ways never seen before.
 %p
   %input{ :type => 'button', :value => 'Toggle #main Gradient', :class => "toggle-gradient inline" } 
   %input{ :type => 'button', :value => 'Toggle Vibrant Gradient', :class => "toggle-vibrant-gradient inline" }
 %p
-  To get a better idea of whats possible check out Colorzilla's #{ link_to('The Ultimate CSS Gradient Generator', 'http://www.colorzilla.com/gradient-editor/', :target => '_blank') } which will allow you to create CSS gradients using a fairly intuitive editor. There is also a great article called #{ link_to('Speed Up with CSS3 Gradients', 'http://css-tricks.com/5700-css3-gradients/', :target => '_blank')} that will go into some of the finer points.
+  To get a better idea of whats possible check out Colorzilla's #{ link_to('The Ultimate CSS Gradient Generator', 'http://www.colorzilla.com/gradient-editor/') } which will allow you to create CSS gradients using a fairly intuitive editor. There is also a great article called #{ link_to('Speed Up with CSS3 Gradients', 'http://css-tricks.com/5700-css3-gradients/')} that will go into some of the finer points.
 %h2 Browser Support
 %p Without filters there is currently no support for CSS gradients in IE7-8, IE9 does support multi-stop linear gradients if you leverage <em>SVG</em>. Prior to the more recent Webkit releases Safari and Chrome used a method outside the spec which will require you to use the legacy syntax as well as the modern if you wish to support them all.
 %h3 Old Webkit
@@ -19,7 +19,7 @@
   #!css
   background-image: -webkit-linear-gradient(top, #2F2727, #1a82f7);
 %h2 Cross Browser Solution
-%p Outside of filters and <em>SVG</em> there is also #{link_to('CSS3 Pie', 'http://css3pie.com/documentation/supported-css3-features/#gradients', :target => '_blank')} but at this time it might not be a good fit for many projects.
+%p Outside of filters and <em>SVG</em> there is also #{link_to('CSS3 Pie', 'http://css3pie.com/documentation/supported-css3-features/#gradients')} but at this time it might not be a good fit for many projects.
 %h1 Background Size
 %p Lately there has been a lot of sites using full size background images that scale with the window while keeping aspect ratio, this is achieved by setting the <em>background-size</em> property to cover.
 %h3 Full screen background images
@@ -123,8 +123,8 @@
 %h2 Browser Support
 %p Multiple background images are supported by all modern browser and back a few generations with the exception of IE7-8. I did find an #{ link_to('article', 'http://76.74.170.157/post_Cross_Browser_Multi_background_images__including_I-16839.html')} that shows you how to achieve multiple backgrounds in IE7-8 using filters but I've yet to test it and have had issues with using the IE filters.
 %h2 Cross Browser Solution
-%p If you wish to use multiple background in IE7-8 I've had #{ link_to('success', 'http://www.baileysrange.com/', :target => '_blank')} using  #{link_to('CSS3 Pie', 'http://css3pie.com/documentation/supported-css3-features/#pie-background', :target => '_blank')}.
+%p If you wish to use multiple background in IE7-8 I've had #{ link_to('success', 'http://www.baileysrange.com/')} using  #{link_to('CSS3 Pie', 'http://css3pie.com/documentation/supported-css3-features/#pie-background')}.
 %h1 Mask Image
-%p While currently a <em>Webkit</em> only property the mask image represents quite a step forward stylized text. #{ link_to('http://trentwalton.com/2011/05/19/mask-image-text/', 'http://trentwalton.com/2011/05/19/mask-image-text/', :target => '_blank')}
+%p While currently a <em>Webkit</em> only property the mask image represents quite a step forward stylized text. #{ link_to('http://trentwalton.com/2011/05/19/mask-image-text/', 'http://trentwalton.com/2011/05/19/mask-image-text/')}
 %h1 Background Clip 
-%p The following example #{link_to('http://trentwalton.com/bgclip/', 'http://trentwalton.com/bgclip/', :target => '_blank')} may look like the above mentioned but there is a major difference. In the current example the background of the parent container of the text is visible whereas the above mentioned has the texture applied directly to the text. To aid you in understanding the concepts imagine that all <em>Photoshop</em> conventions apply. The current example is nothing more than a <em>clipping mask</em> whereas the previous is a texture applied to the text via <em>layer style</em>.
+%p The following example #{link_to('http://trentwalton.com/bgclip/', 'http://trentwalton.com/bgclip/')} may look like the above mentioned but there is a major difference. In the current example the background of the parent container of the text is visible whereas the above mentioned has the texture applied directly to the text. To aid you in understanding the concepts imagine that all <em>Photoshop</em> conventions apply. The current example is nothing more than a <em>clipping mask</em> whereas the previous is a texture applied to the text via <em>layer style</em>.

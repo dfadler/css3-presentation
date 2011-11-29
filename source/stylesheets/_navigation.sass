@@ -1,25 +1,46 @@
-nav
-  +clearfix()
+#super-nav
+  margin: ($default-content-padding / 2) 0
+  +legacy-pie-clearfix()
   ul
-    margin: 0
+    margin: 0 0 0 -10px
     padding: 0
     float: right
     list-style: none
     li
+      font-size: 12px
       float: left
       margin-left: 10px
       &:after
         content: "|"
         padding-left: 10px
-      &:first-child
-        margin-left: 0
       &:last-child
         &:after
           padding-left: 0
           content: ''
-      
       a
-        font: bold 15px $oswald
-        text-transform: uppercase
+        color: #7f8a7c
+        font-family: $rocksalt
+        font-weight: normal
+        text-transform: capitalize
         text-decoration: none
-        color: #333
+        &:hover
+          color: #fff
+        
+#property-navigation
+  margin-top: $default-content-padding * 2
+  ul
+    margin: 0 0 0 -10px
+    padding: 0
+    list-style: none
+    li
+      font-size: 14px 
+      margin: $standard-margin 0 $standard-margin 10px
+      a
+        color: #7f8a7c
+        font-family: $rocksalt
+        font-weight: normal
+        text-transform: capitalize
+        letter-spacing: 5px
+        text-decoration: none
+        &:hover
+          color: #fff

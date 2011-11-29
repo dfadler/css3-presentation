@@ -1,10 +1,66 @@
 -content_for :head do
-  %title Some Things Are Worth Waiting For
+  %title CSS3 | Looking Forward To The Future
   
-%hgroup
-  %h1 CSS3
-  
-%section
-  http://dowebsitesneedtolookexactlythesameineverybrowser.com/
-  
+%h1 CSS3
 
+%h2 Beginners Guide
+
+%p
+  Zen Elements offers has a wonderful series of articles on #{ link_to('CSS3', 'http://www.zenelements.com/blog/css3-introduction/')} that will quickly get you up to speed. Eric Meyer the CSS guru has also cited #{link_to('http://www.css3.info/', 'http://www.css3.info/')} as a good start.
+
+%blockquote
+  %p http://css3.info/ is a good start.  There aren’t a ton of resources out there beyond that, I think mostly because so little of CSS3 is widely supported.
+  %cite 
+    =link_to('Eric Meyer', 'http://sixrevisions.com/interviews/six-questions-eric-meyer-on-css3/')
+
+
+%h2 Current Support
+
+%p
+  While not comprehensive this list does give an idea of whats to be expected from each browser. In short you can start developing with CSS3 today as long as you take time to ensure your IE users experience with some kind of fallback or alternative. The chart below can be found in the #{link_to('introduction article', 'http://www.zenelements.com/blog/css3-introduction/')} of the Zen Elements CSS3 Series.
+  
+=image_tag('browser-compatability-chart.png', :alt => '', :class => 'image-center')
+
+%h1 What the future might hold
+
+%h2 Interface Design
+
+%p 
+  Lately I've been seeing #{ link_to('videos from designers', 'http://vimeo.com/8790087')} who for the most part create their interfaces in the browser at the code level. 
+  The new CSS features are very "<em>Photoshop like</em>" which outside of complex images eliminates the need to use such a resource heavy application. 
+  Whats more you eliminate the cost of a high fidelity image comps and create a code base that can save you a lot of time and frustration during development.
+  
+%h3 Weighing the pros &amp; cons
+
+#pros-and-cons.box-1
+  #pros.box-2
+    %h4 Pros
+    %ul
+      %li Designers that are well versed in web standards and conventions
+      %li Version controlled comps
+      %li Easier to implement a grid based design
+      %li CSS solutions are exhausted before images are considered 
+      %li Concepts are tested in the browser before the client ever sees them
+      %li Quicker turn around
+  #cons.box-2
+    %h4 Cons
+    %ul
+      %li Cross Training
+      %li The process might be stifling to the creativity of some
+      %li To achieve the benefit of being able to use design code as development and eventually production the team would have to adhere to a very ridged coding style
+
+%h1 Conclusion
+
+%h2 Adoption strategy for the present
+
+%p 
+  %strong Q. 
+  Do web sites need to look exactly the same in every browser?
+  %br
+  %strong A.
+  #{ link_to('Answer', 'http://dowebsitesneedtolookexactlythesameineverybrowser.com/')}, see #{ link_to('progressive enhancement', 'http://perishablepress.com/press/2010/01/11/css3-progressive-enhancement-smart-design/')}.
+  %p Throughout my examples I make note of some javascript that can help you in achieving cross browser support for some of the CSS3 properties. For some projects these might be a perfect fit but overall I think an approach that embraces the progressive enhancement strategy is more cost effective and could actually be a selling point if presented properly.
+
+%h2 Always be agile
+
+%p With the advent of CSS3 and HTML5 plus the leaps and bounds at which javascript is growing we are in for big changes.

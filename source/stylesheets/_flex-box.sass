@@ -1,0 +1,9 @@
+.box-1
+  .index &
+    +display-box
+  +box-align(top)
+  .box-2
+    +box-flex(1)
+    width: 50%
+    + .box-2
+      margin-left: $standard-margin
