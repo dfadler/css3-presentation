@@ -1,0 +1,16 @@
+.layout-methods &
+  #without-columns
+    +clearfix
+    p:first-child
+      float: left
+      margin-top: 0
+      width: 50%
+    p:last-child
+      float: right
+      margin-top: 0
+      width: 50%
+  #with-columns
+    p
+      &:first-child
+        margin-top: 0
+    +column-count(2)

@@ -1,27 +1,41 @@
 %h1 Misc CSS3
 
 %h2 Text Overflow
-http://www.css3.info/preview/text-overflow/
+%blockquote
+  %p Sometimes text will have to be clipped. For instance when it overflows the element’s box. When this happens, you want to leave a visual “hint” to the user that text has been clipped. This is were the text-overflow-props come in.
+  %cite
+    =link_to('http://www.css3.info/preview/text-overflow/', 'http://www.css3.info/preview/text-overflow/')
+%h3 Browser Support
+%p Support is basic but with the exception of #{ link_to('Firefox', 'https://developer.mozilla.org/en/CSS/text-overflow#section_6')} is very reliable even in IE6!
 
 %h2 Text Stroke
-http://css-tricks.com/7405-adding-stroke-to-web-text/ 
-
-%h2 GUI Icons
-=link_to('http://nicolasgallagher.com/pure-css-gui-icons/demo/', 'http://nicolasgallagher.com/pure-css-gui-icons/demo/')
+=link_to('http://css-tricks.com/examples/TextStroke/', 'http://css-tricks.com/examples/TextStroke/')
+%h3 Browser Support
+%p Sorry its Webkit only.
 
 %h2 Box Reflection
-http://s3.amazonaws.com/nettuts/704_cssReflections/index.html
+%p They used to do this with Java applets #{ link_to('http://s3.amazonaws.com/nettuts/704_cssReflections/index.html', 'http://s3.amazonaws.com/nettuts/704_cssReflections/index.html')}
+%h3 Browser Support
+%p Sorry its Webkit only.
 
-%h2 Pseudo Selectors
-http://reference.sitepoint.com/css/css3psuedoclasses
-http://thinkvitamin.com/design/stay-on-target/
-http://www.quirksmode.org/css/enabled.html
-=link_to('Styling Children Based on their number', 'http://lea.verou.me/2011/01/styling-children-based-on-their-number-with-css3/')
+%h2 Selectors
+%h3 Pseudo
+%blockquote
+  %p This will confirm once and for all that I’m basically a big huge code nerd, but honestly, the advanced selectors.  Sure, sure, opacity and rounded corners and multiple background images and pretty things blah blah blah.  All very nice.  But the power to describe Web 2.0 designs in CSS is insignificant compared with the power to select every third table row starting with the fifth one.
+  %cite
+    =link_to('Eric Meyer', 'http://sixrevisions.com/interviews/six-questions-eric-meyer-on-css3/')
+%blockquote
+  %p Blurring the lines between behaviour and presentation
+  %cite
+    =link_to('Think Vitamin', 'http://thinkvitamin.com/design/stay-on-target/')
+%p Because of the improvement in the selectors its possible we might be replacing some existing javascript solutions with #{ link_to('pure css3', 'http://iamceege.com/pure-css3-content-slider/')}. While thats amazing there are some simple uses like #{ link_to('styling children based on their number', 'http://lea.verou.me/2011/01/styling-children-based-on-their-number-with-css3/')} that I think would make all of our lives easier 
 
-%h2 Attribute Selectors
-http://www.css3.info/preview/attribute-selectors/
+%h3 Attribute Selectors
+With the addition of attribute selectors the need for some user javascript to hook in will be diminished #{ link_to("attribute selectors", "http://www.css3.info/preview/attribute-selectors/")}.
+
 
 %h2 Content
+http://nicolasgallagher.com/css-image-replacement-with-pseudo-elements/demo/
 http://nooshu.com/adding-content-using-css3
 http://nooshu.com/explore/css3-selectors/before-after.html
 

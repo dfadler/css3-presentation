@@ -4,7 +4,7 @@ $(function(){
 	'use strict';
 	
 	// Opens External Links In New Window
-	$("a[href^='http://']")
+	$("a[href^='http://'], a[href^='https://']")
 		.attr(
 			"target","_blank"
 		);

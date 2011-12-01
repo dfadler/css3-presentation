@@ -1,25 +1,69 @@
+%h1 Layout Methods
 %h2 Columns
-http://www.quirksmode.org/css/multicolumn.html
-https://developer.mozilla.org/en/CSS3_Columns
-http://www.css3.info/preview/multi-column-layout/
-http://www.alistapart.com/articles/css3multicolumn
-http://www.zenelements.com/blog/css3-multiple-columns/
-http://kmsm.ca/2010/an-almost-complete-guide-to-css3-multi-column-layouts/
-http://net.tutsplus.com/tutorials/html-css-techniques/quick-tip-the-multi-column-css3-module/
-http://zomigi.com/blog/deal-breaker-problems-with-css3-multi-columns/
+%p With just a little bit of css, no server site logic, or having to mess with your content you can have an easy to read multi column layout.
+%h3 Without the Columns Module
+#without-columns
+  %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+  %p dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+%h4 The Code
+:coderay
+  #!html
+  <div>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+    </p>
+    <p>
+      dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+  </div>
+:coderay
+  #!css
+  div {
+    overflow: hidden;
+    *zoom: 1;
+  }
+  div p:first-child {
+    float: left;
+    margin-top: 0;
+    width: 50%;
+  }
+  div p:last-child {
+    float: right;
+    margin-top: 0;
+    width: 50%;
+  }
+%h3 With the Columns Module
+#with-columns
+  %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  
+%h4 The Code
+:coderay
+  #!html
+  <div>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+  </div>
+:coderay
+  #!css
+  .layout-methods #main #with-columns {
+    column-count: 2;
+  }
+  .layout-methods #main #with-columns p:first-child {
+    margin-top: 0;
+  }
+%h2 Browser Support
+%p The multi column module is available in all current versions of Gecko and Webkit browsers as well as several versions back. Don't expect to see this in Internet Explorer until version 10.
+%h2 Cross Browser Solution
+%blockquote
+  %p Of course, we know that browser support for the multi-column methods is pretty much restricted to the Firefox and Safari browsers using their -moz- and -webkit- prefixes. What about Internet Explorer? In this case, there is a #{ link_to('JavaScript method', 'http://www.cvwdesign.com/txp/article/360/')} that enables support and allows you to implement some of these properties. In fact, you do not need to use the -moz- and -webkit- rules either. See my third example which uses an external style sheet that is parsed by the JavaScript. This example works with Internet Explorer 6, 7 and 8, Firefox 2 to 3.5, Safari 3 and 4, and Opera 9.6
+  %cite 
+    =link_to('http://www.cvwdesign.com/txp/article/360/', 'http://www.cvwdesign.com/txp/article/360/')
 %h2 Flexbox
-
-%h3 Demo
-=link_to('http://www.456bereastreet.com/lab/flexbox/', 'http://www.456bereastreet.com/lab/flexbox/')
-http://dev.w3.org/csswg/css3-flexbox/
-http://www.html5rocks.com/en/tutorials/flexbox/quick/
-http://www.css3.info/introducing-the-flexible-box-layout-module/
-http://www.the-haystack.com/2010/01/23/css3-flexbox-part-1/
-http://blog.isotoma.com/2010/08/css3-flexbox/
-http://designshack.net/articles/css/build-a-web-page-with-css3-flexbox/
-http://www.456bereastreet.com/archive/201103/the_css3_flexible_box_layout_flexbox/
-http://ie.microsoft.com/testdrive/html5/flexin/default.html
-http://hacks.mozilla.org/2010/04/the-css-3-flexible-box-model/
-
-http://www.quirksmode.org/css/multicolumn.html
-http://net.tutsplus.com/tutorials/html-css-techniques/quick-tip-the-multi-column-css3-module/
+%p Only supported in Gecko and Webkit browsers the flexible box is an alternative to the box model.
+%blockquote
+  %p The children of a box are laid out either horizontally or vertically, and unused space can be assigned to a particular child or distributed among the children by assignment of ‘flex’ to the children that should expand.
+  %cite 
+    =link_to('http://www.css3.info/introducing-the-flexible-box-layout-module/', 'http://www.css3.info/introducing-the-flexible-box-layout-module/')
+%h3 Time to kill
+%p Currently a draft and can yield different results in Gecko and Webkit browsers.

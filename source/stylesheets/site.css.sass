@@ -82,10 +82,12 @@ body
 // Main Content Section
 #main
   width: $default-content-width
-  margin: $standard-margin auto $default-content-padding
+  margin: 0 auto ($default-content-padding / 2)
   padding: $default-content-padding
   background: #efefef
   +border-radius($default-radius)
+  position: relative
+  z-index: 2
   //+clearfix()
   &.shadow
     +box-shadow(0 1px 100px rgba(0, 0, 0, .6), 0 0 50px rgba(255, 254, 238, .6) inset, 0 0 50px rgba(0, 0, 0, .4) inset)
@@ -303,3 +305,6 @@ body
   
   // Transforms Page
   @import transforms
+  
+  // Layout Methods
+  @import layout-methods
