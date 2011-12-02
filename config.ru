@@ -1,8 +1,10 @@
 require 'rubygems'
 require 'middleman'
-require 'haml-coderay'
+require 'coderay'  # get one of supported highlighters
+require 'rack/codehighlighter'
 
-use Rack::Codehighlighter, :coderay, :element => "pre", :pattern => /\A:::(\w+)\s*\n/
+# use Rack::Codehighlighter, :coderay, :element => "pre", :pattern => /\A:::(\w+)\s*\n/
+require 'haml-coderay'
 
 
 run Middleman.server
