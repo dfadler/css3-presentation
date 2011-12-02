@@ -2,7 +2,7 @@
   %title Transformations | Gaining Support Every Angry Inch
 %h1 Transformations
 %p There are two types of transformations 2D and 3D. 
-%h2 Basic 2D Transformations
+%h2 2D Transformations
 #skew.basic
   %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
 #scale.basic
@@ -13,6 +13,8 @@
   %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
 #rotate-skew-scale-translate.basic
   %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
+
+%h4.clear The CSS
 :coderay
   #!css 
   /* You can pass x, y, z axis to the skew transform property */
@@ -39,10 +41,10 @@
   #rotate-skew-scale-translate {
     transform:  scale(1.2, 1.2) rotateZ(40deg) translate(10px, 20px) skew(30deg, 0);
   }
-%h2 Basic 3D Transformations
+%h2 3D Transformations
 %blockquote
   %p 3D transforms are similar to 2D transforms. The basic properties are translate3d, scale3d, rotateX, rotateY and rotateZ. Translate3d and scale3d take three arguments for x,y and z, whereas the rotates just take an angle.
-  %cite #{ link_to('3D Examples', 'http://css3.bradshawenterprises.com/transforms/')}
+  %cite #{ link_to('Rich Bradshaw', 'http://css3.bradshawenterprises.com/transforms/')}
 #trans3d
   #one
     %p rotateX
@@ -50,6 +52,7 @@
     %p rotateY
   #three
     %p rotateZ
+%h4.clear The CSS
 :coderay
   #!css
   #trans3d div {
@@ -66,7 +69,7 @@
   #trans3d:hover #three {
     transform: rotate(180deg);
   }
-%h2 Browser Support
+%h3 Browser Support
 %blockquote
   %p The transform property is not supported in any browser.
   %p Internet Explorer supports an alternative, the -ms-transform property (2D transforms only).
@@ -74,17 +77,18 @@
   %p Opera supports an alternative, the -o-transform property (2D transforms only).
   %p Safari and Chrome support an alternative, the -webkit-transform property (3D and 2D transforms).
   %cite #{ link_to('http://www.w3schools.com/cssref/css3_pr_transform.asp', 'http://www.w3schools.com/cssref/css3_pr_transform.asp')}
-%h2 Cross Browser Solutions
+%p Not supported in IE7-8
+%h3 Cross Browser Solutions
 %p There are a few projects that seek to detect support and apply the proper animation technique accordingly. These projects are promising but it could be years before either is robust much less works in all browsers.
 %ul
   %li #{ link_to('http://playground.benbarnett.net/jquery-animate-enhanced/', 'http://playground.benbarnett.net/jquery-animate-enhanced/')}
   %li #{ link_to('http://ricostacruz.com/jquery.transit/', 'http://ricostacruz.com/jquery.transit/')}
 %p Long story short you will have an up hill battle if you want to start using 3D transformations in all browsers.
-%h1 Building on the basics
+%h2 Building on the basics
 %p This next example will only work in Webkit browser but it is a great example of the power at your fingertips with 3D transformations.
 %p 
   %a{ :href => 'http://css3.bradshawenterprises.com/transforms/#transDemo3'}
     #{ image_tag('cube.png', :alt => '')}
 
-%h1 CSS 3D Transformations In Depth
+%h2 CSS 3D Transformations In Depth
 %p If you would like to know more there is a #{ link_to('great project by Desandro', 'http://desandro.github.com/3dtransforms/')} on CSS 3D transforms. 
