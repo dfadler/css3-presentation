@@ -1,5 +1,5 @@
 #super-nav
-  margin: ($default-content-padding / 2) 0
+  margin: 25px 0 10px
   +legacy-pie-clearfix()
   ul
     margin: 0 0 0 -10px
@@ -7,10 +7,12 @@
     float: right
     list-style: none
     li
-      font-size: 12px
+      font-size: $navigation-font-size
       float: left
       margin-left: 10px
       &:after
+        position: relative
+        top: 1px
         content: "|"
         padding-left: 10px
       &:last-child
@@ -18,25 +20,40 @@
           padding-left: 0
           content: ''
       a
-        color: #7f8a7c
+        color: #a5b3a1
         font-family: $rocksalt
         font-weight: normal
         text-transform: capitalize
         text-decoration: none
+        display: inline-block
+        vertical-align: top
+        &:after
+          +opacity(0)
+          border-bottom-width: 0px 
+          -webkit-border-image: image-url('underline.png') 0% scale
+          content: '.'
+          color: transparent
+          display: block
         &:hover
           color: #fff
+          &:after
+            +opacity(1)
+            -webkit-border-image: image-url('underline.png') 0% scale
+            content: '.'
+            color: transparent
+            display: block
         
 #property-navigation
   margin-top: $default-content-padding * 2
   ul
     position: fixed
     top: 85px
-    margin: 0 0 0 -10px
+    margin: $standard-margin 0 0 -10px
     padding: 0
     list-style: none
     li
-      font-size: 14px 
-      margin: $standard-margin 0 $standard-margin 10px
+      font-size: $navigation-font-size
+      margin: 5px 0 5px 10px
       a
         color: #7f8a7c
         font-family: $rocksalt
@@ -44,5 +61,19 @@
         text-transform: capitalize
         letter-spacing: 5px
         text-decoration: none
+        display: inline-block
+        &:after
+          +opacity(0)
+          border-bottom-width: 0px 
+          -webkit-border-image: image-url('underline.png') 0% scale
+          content: '.'
+          color: transparent
+          display: block
         &:hover
           color: #fff
+          &:after
+            +opacity(1)
+            -webkit-border-image: image-url('underline.png') 0% scale
+            content: '.'
+            color: transparent
+            display: block

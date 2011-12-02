@@ -1,25 +1,79 @@
 %h1 Misc CSS3
 
-%h2 Text Overflow
-%blockquote
-  %p Sometimes text will have to be clipped. For instance when it overflows the element’s box. When this happens, you want to leave a visual “hint” to the user that text has been clipped. This is were the text-overflow-props come in.
-  %cite
-    =link_to('http://www.css3.info/preview/text-overflow/', 'http://www.css3.info/preview/text-overflow/')
-%h3 Browser Support
-%p Support is basic but with the exception of #{ link_to('Firefox', 'https://developer.mozilla.org/en/CSS/text-overflow#section_6')} is very reliable even in IE6!
-
+#text-overflow
+  %h2 Text Overflow
+  %blockquote
+    %p Sometimes text will have to be clipped. For instance when it overflows the element’s box. When this happens, you want to leave a visual "hint" to the user that text has been clipped. This is were the text-overflow-props come in.
+    %cite
+      =link_to('http://www.css3.info/preview/text-overflow/', 'http://www.css3.info/preview/text-overflow/')
+  %h3 Without Text Overflow
+  #without-text-overflow
+    %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  %h3 With Text Overflow
+  #with-text-overflow
+    %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  %h4 Please note
+  %p This technique will only work on <em>non-wrapping text</em> with a width skinnier than the line which might be problematic for some designs. If you need a solution that uses a specific number of characters to determine where the truncation will occur then one of the following #{ link_to('javascript solutions', 'http://stackoverflow.com/questions/2248742/jquery-text-truncation-read-more-style')} may work for you.
+  %h3 Browser Support
+  %blockquote 
+    %p While the text-overflow: ellipsis property is supported in Internet Explorers 6 & 7, Safari 3 & 4, Chrome 1 &2, it requires special handling for IE 8 Standards Mode, Opera, and FireFox.
+    %cite 
+      =link_to('http://mattsnider.com/css/css-string-truncation-with-ellipsis/', 'http://mattsnider.com/css/css-string-truncation-with-ellipsis/')
+  %h3 Cross Browser Solution
+  %p The article by Justin Maxwell mentioned in the quote above #{ link_to('CSS String Truncation with Ellipsis', 'http://mattsnider.com/css/css-string-truncation-with-ellipsis/')} walks you through the process of getting this to work cross browser.
 %h2 Text Stroke
-=link_to('http://css-tricks.com/examples/TextStroke/', 'http://css-tricks.com/examples/TextStroke/')
+%p This example was found at #{ link_to('CSS Tricks', 'http://css-tricks.com/examples/TextStroke/')}
+%p.stroked STROKE OF GENIUS
+%h3 The Code
+:coderay
+  #!css
+  .stroked {
+  /* WebKit (Safari/Chrome) Only */
+    -webkit-text-stroke: 1px black;
+
+    /* If we weren't using text-shadow, we'd set a fallback color
+       and use this to set color instead
+      -webkit-text-fill-color: white; */
+
+    color: white;
+
+    text-shadow:
+      3px 3px 0 #000,
+      /* Simulated effect for Firefox and Opera
+         and nice enhancement for WebKit */
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+     -1px  1px 0 #000,
+      1px  1px 0 #000;
+  }
+  }
 %h3 Browser Support
 %p Sorry its Webkit only.
 
-%h2 Box Reflection
-%p They used to do this with Java applets #{ link_to('http://s3.amazonaws.com/nettuts/704_cssReflections/index.html', 'http://s3.amazonaws.com/nettuts/704_cssReflections/index.html')}
-%h3 Browser Support
-%p Sorry its Webkit only.
+#reflection
+  %h2 Box Reflection
+  %h3 Relax its just pudding
+  %p Used to have to use java applets if you didn't want to recreate the reflection for each different image.
+  %p.center
+    =image_tag('pudding.png', :alt => '')
+  %h3 The Code
+  :coderay
+    #!css
+    img {
+      -webkit-box-reflect: below px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(.7, transparent), to(white));  
+    }
+  %h4 Please note
+  %p Except for flash... This property will work on any element even <em>&#60;video&#62;</em>!
+  %p.video.center
+    :plain
+      <iframe width="420" height="315" src="http://www.youtube.com/embed/qsfuCfShoeM" frameborder="0" allowfullscreen></iframe>
+  %h3 Browser Support
+  %p Sorry its Webkit only.
 
 %h2 Selectors
+%p The selector we will have access to in the coming years will amount to finer control over design and greater user interaction. Selectors may not have the same flair as some of the other CSS3 features but its because of them that we will be able to create the next generation of user interfaces free of javascript.
 %h3 Pseudo
+%p #{ link_to('http://reference.sitepoint.com/css/css3psuedoclasses', 'http://reference.sitepoint.com/css/css3psuedoclasses')}
 %blockquote
   %p This will confirm once and for all that I’m basically a big huge code nerd, but honestly, the advanced selectors.  Sure, sure, opacity and rounded corners and multiple background images and pretty things blah blah blah.  All very nice.  But the power to describe Web 2.0 designs in CSS is insignificant compared with the power to select every third table row starting with the fifth one.
   %cite
@@ -28,27 +82,33 @@
   %p Blurring the lines between behaviour and presentation
   %cite
     =link_to('Think Vitamin', 'http://thinkvitamin.com/design/stay-on-target/')
-%p Because of the improvement in the selectors its possible we might be replacing some existing javascript solutions with #{ link_to('pure css3', 'http://iamceege.com/pure-css3-content-slider/')}. While thats amazing there are some simple uses like #{ link_to('styling children based on their number', 'http://lea.verou.me/2011/01/styling-children-based-on-their-number-with-css3/')} that I think would make all of our lives easier 
+%p Because of the improvement in the selectors its possible we might be replacing some existing javascript solutions with #{ link_to('pure css', 'http://iamceege.com/pure-css3-content-slider/')}. While thats amazing there are some simple uses like #{ link_to('styling children based on their number', 'http://lea.verou.me/2011/01/styling-children-based-on-their-number-with-css3/')} that I think would make all of our lives easier 
 
 %h3 Attribute Selectors
-With the addition of attribute selectors the need for some user javascript to hook in will be diminished #{ link_to("attribute selectors", "http://www.css3.info/preview/attribute-selectors/")}.
+%p With the addition of attribute selectors the semantic connection between our markup and styling will be improved #{ link_to("attribute selectors", "http://www.css3.info/preview/attribute-selectors/")}.
 
 
 %h2 Content
-http://nicolasgallagher.com/css-image-replacement-with-pseudo-elements/demo/
-http://nooshu.com/adding-content-using-css3
-http://nooshu.com/explore/css3-selectors/before-after.html
+%p The content property allows you to insert content via css and has a great number of uses.
+%ul
+  %li
+    =link_to('Ordered List Styling', 'http://www.456bereastreet.com/lab/styling-ordered-list-numbers/')
+  %li
+    =link_to('Image Replacement', 'http://nicolasgallagher.com/css-image-replacement-with-pseudo-elements/demo/')
+  %li
+    =link_to('Many Great Examples', 'http://css-tricks.com/6555-css-content/')
+
 
 %h2 Dynamic Value Calculation
-http://robertnyman.com/css3/calc/calc.
-http://www.w3.org/TR/css3-values/
-http://hacks.mozilla.org/2010/06/css3-calc/
-http://www.sitepoint.com/css3-calc-function/
-http://www.css3.info/calculated-values-and-css22/
-http://webdesignernotebook.com/css/the-wonderful-calc-function/
+%blockquote
+  %p The CSS3 calc() function is primarily used to calculate lengths, numbers, angles, transition/animation times or sound frequencies. However, it allows you to mix measurement types — a powerful concept in CSS.
+  %cite
+    =link_to('http://www.sitepoint.com/css3-calc-function/', 'http://www.sitepoint.com/css3-calc-function/')
+
+%h3 Browser Support
+Currently only supported in IE9+ and Firefox 4+ 
 
 %h2 Selection Colors
-http://css-tricks.com/examples/DifferentSelectionColors/
-
-%h2 Name Spaces
-http://nimbupani.com/spacing-out-on-css-namespaces.html
+%p A simple property that changes the color of the selection highlight. #{ link_to('Example', 'http://css-tricks.com/examples/DifferentSelectionColors/')}
+%h3 Browser Support
+%p Currently only supported by Webkit and Gecko browsers.

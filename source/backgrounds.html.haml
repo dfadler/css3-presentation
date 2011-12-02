@@ -1,6 +1,7 @@
 -content_for :head do
   %title Backgrounds | You Would Think It Boring But...
-%h1 Gradients
+%h1 Background Properties
+%h2 Gradients
 %p 
   Using gradients on the web is nothing new, <em>24-bit pngs</em> have aided us for years in creating gradations of color as well as #{ link_to('drop shadows', 'shadows.html')}. While this was a boon to the industry it lacked the flexibility that growing web standard proposed. In the coming days gradients will be live and flexible allowing us to us to use them in ways never seen before.
 %p
@@ -8,19 +9,19 @@
   %input{ :type => 'button', :value => 'Toggle Vibrant Gradient', :class => "toggle-vibrant-gradient inline" }
 %p
   To get a better idea of whats possible check out Colorzilla's #{ link_to('The Ultimate CSS Gradient Generator', 'http://www.colorzilla.com/gradient-editor/') } which will allow you to create CSS gradients using a fairly intuitive editor. There is also a great article called #{ link_to('Speed Up with CSS3 Gradients', 'http://css-tricks.com/5700-css3-gradients/')} that will go into some of the finer points.
-%h2 Browser Support
+%h3 Browser Support
 %p Without filters there is currently no support for CSS gradients in IE7-8, IE9 does support multi-stop linear gradients if you leverage <em>SVG</em>. Prior to the more recent Webkit releases Safari and Chrome used a method outside the spec which will require you to use the legacy syntax as well as the modern if you wish to support them all.
-%h3 Old Webkit
+%h4 Old Webkit
 :coderay
   #!css
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#2F2727), to(#1a82f7));
-%h3 New Webkit
+%h4 New Webkit
 :coderay
   #!css
   background-image: -webkit-linear-gradient(top, #2F2727, #1a82f7);
-%h2 Cross Browser Solution
+%h3 Cross Browser Solution
 %p Outside of filters and <em>SVG</em> there is also #{link_to('CSS3 Pie', 'http://css3pie.com/documentation/supported-css3-features/#gradients')} but at this time it might not be a good fit for many projects.
-%h1 Background Size
+%h2 Background Size
 %p Lately there has been a lot of sites using full size background images that scale with the window while keeping aspect ratio, this is achieved by setting the <em>background-size</em> property to cover.
 %h3 Full screen background images
 :coderay
@@ -51,11 +52,11 @@
   }
 %p
   %input{ :type => 'button', :value => 'Toggle Scaled Background', :class => "toggle-scaled-background" }
-%h2 Browser Support
+%h3 Browser Support
 %p The background size property is supported by all modern browser with the exception of IE7-8. 
-%h2 Cross Browser Solutions
+%h3 Cross Browser Solutions
 %p #{link_to('CSS Tricks', 'http://css-tricks.com/3458-perfect-full-page-background-image/')} has a tutorial that might be of some help in supporting IE7-8 but it wont be perfect for all situations. In the event that the IE filters don't fit your needs you could also use javascript to calculate the image size.
-%h3 Javascript to get calculate the dimensions of an image while keeping its aspect ratio
+%h4 Javascript to get calculate the dimensions of an image while keeping its aspect ratio
 :coderay
   #!javascript
   for (objectWidth = windowWidth; objectHeight <= windowHeight; objectWidth += 1) {
@@ -66,10 +67,13 @@
                 });
         }
 %p It should be noted that a method like the above will require you to add the image to the document, then reposition it after its been sized.
-%h1 Multiple Backgrounds
+%h2 Multiple Backgrounds
 %section.flex-box
   %section.box-1
-    %p Some of the changes in CSS3 offer such a radical departure from tradition that its hard to anticipate the long term ramifications. With a combination of multiple background images, positioning, and a little javascript you could probably make a fairly interesting mosaic. What about a transparent png as a mask with the background images animated around the screen?
+    %p 
+      Some of the most popular effects could be made a lot easier to manage through the use of of multiple backgrounds. Parallax and mosaics are just the beginning, it will be really interesting to see what is done when we no longer have to worry about IE7-8.  
+    %h3 Something Practical
+    %p Dreaming aside there are practical reasons for using multiple backgrounds. First this would eliminate the need for extra markup and styling to achieve the same background this page has with all five toggled.
   %section.box-2
     %p 
       %input{ :type => 'button', :value => 'Toggle Background 1', :class => "toggle-full-background inline" } 
@@ -81,9 +85,10 @@
       %input{ :type => 'button', :value => 'Toggle Background 4', :class => "toggle-background-3 inline" }
     %p
       %input{ :type => 'button', :value => 'Toggle Background 5', :class => "toggle-background-4 inline" }
-%h2 Something Practical
-%p My dreaming aside there are practical reasons for using multiple backgrounds. First this would a eliminate the need for extra markup and styling to achieve the same background this page has with all five toggled.
-%h3 Without Multiple Backgrounds
+
+%h4 Without Multiple Backgrounds
+%p
+  %strong HTML
 :coderay
   #!html
   <body>
@@ -92,6 +97,8 @@
     <div id="three"></div>
     <div id="four"></div>
   </body>
+%p
+  %strong CSS
 :coderay
   #!css
   body {
@@ -110,21 +117,25 @@
   .four {
     background: url("http://placekitten.com/700/700") no-repeat 100% 100% fixed;
   }
-%h3 With Multiple Backgrounds
+%h4 With Multiple Backgrounds
+%p
+  %strong HTML
 :coderay
   #!html
     <body></body>
+%p
+  %strong CSS
 :coderay
   #!css
   body {
     background: url("http://placekitten.com/1000/1000") 0 0 no-repeat fixed, url("http://placekitten.com/400/400") no-repeat 100% 0 fixed, url("http://placekitten.com/1500/1500") no-repeat 0 100% fixed, url("http://placekitten.com/700/700") no-repeat 100% 100% fixed, url("http://placekitten.com/2000/2000") no-repeat center center fixed;
     background-color: #333333;
   }
-%h2 Browser Support
+%h3 Browser Support
 %p Multiple background images are supported by all modern browser and back a few generations with the exception of IE7-8. I did find an #{ link_to('article', 'http://76.74.170.157/post_Cross_Browser_Multi_background_images__including_I-16839.html')} that shows you how to achieve multiple backgrounds in IE7-8 using filters but I've yet to test it and have had issues with using the IE filters.
-%h2 Cross Browser Solution
+%h3 Cross Browser Solution
 %p If you wish to use multiple background in IE7-8 I've had #{ link_to('success', 'http://www.baileysrange.com/')} using  #{link_to('CSS3 Pie', 'http://css3pie.com/documentation/supported-css3-features/#pie-background')}.
-%h1 Mask Image
-%p While currently a <em>Webkit</em> only property the mask image represents quite a step forward stylized text. #{ link_to('http://trentwalton.com/2011/05/19/mask-image-text/', 'http://trentwalton.com/2011/05/19/mask-image-text/')}
-%h1 Background Clip 
-%p The following example #{link_to('http://trentwalton.com/bgclip/', 'http://trentwalton.com/bgclip/')} may look like the above mentioned but there is a major difference. In the current example the background of the parent container of the text is visible whereas the above mentioned has the texture applied directly to the text. To aid you in understanding the concepts imagine that all <em>Photoshop</em> conventions apply. The current example is nothing more than a <em>clipping mask</em> whereas the previous is a texture applied to the text via <em>layer style</em>.
+%h2 Mask Image
+%p While currently a <em>Webkit</em> only property the #{ link_to('mask image', 'http://trentwalton.com/2011/05/19/mask-image-text/')} represents quite a step forward stylized text. 
+%h2 Background Clip 
+%p The following #{link_to('example', 'http://trentwalton.com/bgclip/')} may look like the above mentioned but there is a major difference. In the current example the background of the parent containing the text is visible whereas the above mentioned has the texture applied directly to the text. To aid you in understanding the concepts imagine that all <em>Photoshop</em> conventions apply. The current example is nothing more than a <em>clipping mask</em> whereas the previous is a texture applied to the text via <em>layer style</em>.

@@ -1,7 +1,23 @@
 -content_for :head do
   %title CSS3 | Looking Forward To The Future
   
-%h1 CSS3
+%h1 The Future of CSS
+
+%h2 The purpose of this site
+
+#to-do{ :style => 'background: #ffffff; padding: 20px; margin: 40px 0 0; border: solid 2px red;' }
+  %h3{ :style => 'color: red; margin-top: 0;' }
+    Note To Do
+  %ol{ :style => 'color: black' }
+    %li 
+      Confirm each page and its sections have all the needed information <em style="color: #666;">(property type, example or reference link, browser support, fallback)</em>
+      %p.note Need to improve the browser support notes and  #{ link_to('check terminology', 'http://www.itbusinessnet.com/articles/viewarticle.jsp?id=232197')} site wide.
+    %li Add demos to the related pages and prune the demo list
+    %li Confirm the sections don't read like the ravings of a mad man
+    %li Check for spelling mistakes
+    %li Figure out the support page 
+    %li Create intro message
+    %li Small amount of information on the sub pages and the sections they contain
 
 %h2 Beginners Guide
 
@@ -13,19 +29,18 @@
   %cite 
     =link_to('Eric Meyer', 'http://sixrevisions.com/interviews/six-questions-eric-meyer-on-css3/')
 
-%h2 CSS3 Wysiwyg
-=link_to('http://www.css3maker.com/index.html', 'http://www.css3maker.com/index.html')
-
 %h2 Current Support
 
-%p
-  While not comprehensive this list does give an idea of whats to be expected from each browser. In short you can start developing with CSS3 today as long as you take time to ensure your IE users experience with some kind of fallback or alternative. The chart below can be found in the #{link_to('introduction article', 'http://www.zenelements.com/blog/css3-introduction/')} of the Zen Elements CSS3 Series.
+%p In the event that the pages don't cover the property you're interested in you should be able to find an answer using the excellent #{ link_to('Can I Use', 'http://caniuse.com/')} compatibility tables.
+
+%p While not comprehensive this list does give an idea of whats to be expected from each browser. In short you can start developing with CSS3 today as long as you take time to ensure your IE users experience with some kind of fallback or alternative. The chart below can be found in the #{link_to('introduction article', 'http://www.zenelements.com/blog/css3-introduction/')} of the Zen Elements CSS3 Series.
   
-=image_tag('browser-compatability-chart.png', :alt => '', :class => 'image-center')
+%p.center
+  =image_tag('browser-compatability-chart.png', :alt => '', :class => 'image-center')
 
-%h1 What the future might hold
+%h2 In the future
 
-%h2 Interface Design
+%h3 Interface Design
 
 %p 
   Lately I've been seeing #{ link_to('videos from designers', 'http://vimeo.com/8790087')} who for the most part create their interfaces in the browser at the code level. 
@@ -51,9 +66,9 @@
       %li The process might be stifling to the creativity of some
       %li To achieve the benefit of being able to use design code as development and eventually production the team would have to adhere to a very ridged coding style
 
-%h1 Conclusion
+%h2 Conclusion
 
-%h2 Adoption strategy for the present
+%h3 Adoption strategy for the present
 
 %p 
   %strong Q. 
@@ -61,4 +76,4 @@
   %br
   %strong A.
   #{ link_to('Answer', 'http://dowebsitesneedtolookexactlythesameineverybrowser.com/')}, see #{ link_to('progressive enhancement', 'http://perishablepress.com/press/2010/01/11/css3-progressive-enhancement-smart-design/')}.
-  %p Throughout my examples I make note of some javascript that can help you in achieving cross browser support for some of the CSS3 properties. For some projects these might be a perfect fit but overall I think an approach that embraces the progressive enhancement strategy is more cost effective and could actually be a selling point if presented properly.
+%p Throughout my examples I make note of some javascript that can help you in achieving cross browser support for some of the CSS3 properties. For some projects these might be a perfect fit but overall I think an approach that embraces the progressive enhancement strategy is more cost effective and could actually be a selling point if presented properly.

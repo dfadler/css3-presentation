@@ -1,6 +1,6 @@
 -content_for :head do
   %title Shadows | Quickest Way To Make A Bad Design Worse
-%h1 The Shadow Knows
+%h1 Shadow Properties
 %h2 Box Shadows
 %p 
   #{image_tag('shadow.jpg', :height => '400', :width => '370', :class => 'shadow image-align-right')} Most designers will probably be gagging at the garish use of drop shadow on this classic piece of American radio history. Just as radio had a lot going on that the listener might not notice so does this page.
@@ -10,34 +10,29 @@
   The <em>box-shadow</em> module is more than just a simple drop shadow it also allows for inset and even multiple shadows on the same element.
   %br
   %input{ :type => 'button', :value => 'Toggle Vibrant Shadows', :class => "toggle-vibrant-shadows", :title => 'The buttons have an inset shadow!' }
-%h2 Browser Support
-%p 
-  Starting with 
-  %strong v9 Internet Explorer 
-  supports the box shadow, all other modern browsers offer fairly decent support even when going back multiple versions.
+%h3 More than just shadows
+%p The uses for the box shadow property go far beyond creating the seaming of depth.
+%p #{ link_to('39 BOX SHADOWS, NO GOOD REASON', 'http://www.viget.com/uploads/file/boxshadows/')}
+%h3 Browser Support
+%p With the exception of IE7-8 all modern browsers support the box shadow property even going back multiple versions.
 .flex-box
   .box-1
-    %h2 Cross Browser Support
-    %p There have been numerous methods over the years for achieving drop shadows in IE7-8 but like round corners they could quickly become a bother to maintain because of the complex positioning. I personally recommend #{ link_to('CSS3 Pie', 'http://css3pie.com/')} if you're interested in a javascript solution.
+    %h3 Cross Browser Support
+    %p There have been numerous methods over the years for achieving drop shadows in IE7-8 but like round corners they could quickly become a bother to maintain because of the complex positioning. #{ link_to('CSS3 Pie', 'http://css3pie.com/')} shadow rendering is stable if you're interested in a javascript solution.
   .box-2
-    %h2 There are differences
+    %h3 There are differences
     %p Even though there is fairly broad support for the box-shadow you should be aware that there can be noticeable differences in bolder usage of shadows.
     .box-3
       .box-4
-        %h3 Webkit Shadow
+        %h4 Webkit Shadow
         %p #{image_tag('webkit-shadow.png')}
       .box-4
-        %h3 IE9 Shadow
+        %h4 IE9 Shadow
         %p #{image_tag('ie9-shadow.png', :style => "width: 192px;")}
-%h1.text-shadow Text Shadows
-%p 
-  While not a 
-  %em CSS3 
-  feature it might as well be with the lack of attention IE is showing it. 
-  %strong Not even in IE9 
-  do you have access to the text shadow which is a real shame since most other browsers have had it for years. In modern browsers outside of IE you can use up to ten shadows on one element.
+%h2.text-shadow Text Shadows
+%p The text shadow property allows you to define up to ten shadows per element.
+%h3 Multi Shadow Example
+%p The example below was found at #{ link_to('http://www.css3.info/preview/text-shadow/', 'http://www.css3.info/preview/text-shadow/')}
 %h2.fire Text Shadows Are Hot
-%p #{ link_to('Fire CSS Found At', 'http://www.css3.info/preview/text-shadow/')}
-
-%h1 Incorporate this
-http://nicolasgallagher.com/css-drop-shadows-without-images/demo/
+%h3 Browser Support
+%p While not a <em>CSS3</em> feature it might as well be with the lack of attention IE is showing it. <strong>Not even in IE9</strong> do you have access to the text shadow which is a real shame since most other browsers have had it for years.
