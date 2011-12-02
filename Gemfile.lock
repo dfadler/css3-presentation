@@ -124,7 +124,7 @@ DEPENDENCIES
   coderay
   execjs
   heroku
-  middleman (~> 2.0.8)
+  middleman
   rack-codehighlighter
   rack-contrib
   redcarpet
