@@ -8,9 +8,9 @@
   %input{ :type => 'button', :value => 'Toggle #main Gradient', :class => "toggle-gradient inline" } 
   %input{ :type => 'button', :value => 'Toggle Vibrant Gradient', :class => "toggle-vibrant-gradient inline" }
 %p
-  To get a better idea of whats possible check out Colorzilla's #{ link_to('The Ultimate CSS Gradient Generator', 'http://www.colorzilla.com/gradient-editor/') } which will allow you to create CSS gradients using a fairly intuitive editor. There is also a great article called #{ link_to('Speed Up with CSS3 Gradients', 'http://css-tricks.com/5700-css3-gradients/')} that will go into some of the finer points.
+  To get a better idea of whats possible check out Colorzilla's #{ link_to('The Ultimate CSS Gradient Generator', 'http://www.colorzilla.com/gradient-editor/') }. There is also a great article called #{ link_to('Speed Up with CSS3 Gradients', 'http://css-tricks.com/5700-css3-gradients/')} that will go into some of the finer points.
 %h3 Browser Support
-%p Without filters there is currently no support for CSS gradients in IE7-8, IE9 does support multi-stop linear gradients if you leverage <em>SVG</em>. Prior to the more recent Webkit releases Safari and Chrome used a method outside the spec which will require you to use the legacy syntax as well as the modern if you wish to support them all.
+%p IE7-8 does not support css gradients but they do have a #{ link_to('filter', 'http://msdn.microsoft.com/en-us/library/ms532997(v=vs.85).aspx')} that will yield similar results, IE9 does support multi-stop linear gradients if you use <em>SVG</em>. Prior to the more recent Webkit releases Safari and Chrome used a method outside the spec which will require you to use the legacy syntax as well as the modern if you wish to support them all.
 %h4 Old Webkit
 :coderay
   #!css
@@ -28,9 +28,6 @@
   #!css
   #element {
     background: url(images/bg.jpg) no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
     background-size: cover;
   }
 %p
