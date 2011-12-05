@@ -1,89 +1,44 @@
+-content_for :head do
+  %title Support | CSS3
 %h1 Support
 %h2 Animation
-%h3 Easing Tool
-%p #{ link_to('http://matthewlein.com/ceaser/', 'http://matthewlein.com/ceaser/')}
-%h2 Web Based Tools
-%h3 CSS3 WYSIWYG
-%p If you would like to play with some of the properties without having to dive into the code there is a #{ link_to('free web based WYSIWYG', 'http://www.css3maker.com/index.html')}.
-%h3 CSS Gradient Generator
-http://www.colorzilla.com/gradient-editor/
-
-%h3 If you like to code
-%p While not aimed at CSS #{ link_to('http://jsfiddle.net/', 'http://jsfiddle.net/')} offers an easy to use platform for creating, testing, and sharing small bits of code.
-%p.note Is the above needed?
-
-
-%hr
-%p.note I need to add respond.js
-
-%h2 Can I use
-http://caniuse.com/
-
-http://caniuse.com/#search=background-size
-http://html5readiness.com/
-
-http://addyosmani.com/blog/css3transitions-jquery/
-CSS Transition support
-Below we can see a list of the browsers that have been confirmed as supporting CSS3 transitions.
-
-Google Chrome 9+
-Opera 10.5+
-Firefox 4+
-Safari 3.2+
-Although this list is promising, one of the main issues with implementing CSS3 transitions now is that support for them is not what could be described as fully cross-browser compatible. As they're a relatively recent feature, users who are still on older browsers (IE6+, Firefox 3 and below) won't be able to view them as animations and this can be challenging if you're aiming for a consistent user-experience. There are however solutions to this problem and we'll be taking a look at some of them in today's post.
-
-Cross-browser Transitions with jQuery
-If CSS3 transitions aren't going to be available, the next obvious language to fall back on is JavaScript. Using Modernizr, a popular feature detection tool, we can detect support for CSS3 transitions quite easily. We are then able to serve up JavaScript powered animations to browsers which don't support it. 
-
-Next, rather than handling all of the cross-browser challenges of smooth animation ourselves, we can make use of jQuery's .animate() features to provide the same animation effect if it can't be done in the current browser using CSS3. The only problem that then remains is getting .animate() to use CSS3 transitions if they're supported and easily fallback to jQuery if they're not. So what do we need to make this happen?
-
-http://muddledramblings.com/table-of-css3-border-radius-compliance/
-http://muddledramblings.com/table-of-css3-color-specifiers/
-
-
-http://webdesignerwall.com/tutorials/cross-browser-css-gradient
-Internet Explorer Limitations
-Internet Explorer gradient filter doesn't support color-stop, gradient angle, and radial gradient. That means you can only specify either horizontal or vertical linear gradient with 2 colors: StartColorStr and EndColorStr.
-
-Final Remarks
-Please note not all browsers support CSS gradient. To be safe, you shouldn't rely on CSS gradient when coding the layout. It should only be used for enhancing the layout.
-http://www.codeforest.net/recreating-tumblr%E2%80%99s-%E2%80%9Cupdating-%E2%80%9D-page-using-pure-css3-with-fallbacks-for-older-browsers
-
-
-But there is a catch. We increased the document size for browsers that don’t support CSS3. They’ll have to download all images and a new, bigger CSS. And this means that the real number of KB saved depends on percentage of browsers the visitors use. If Safari, Firefox and Chrome (latest versions) don’t represent a greatest part, we didn’t actually saved bandwidth usage, but we’ve increased it.
-PROS:
-Faster loading times.
-Less bandwidth usage.
-Hype generation?
-CONS:
-It takes more time to create the effect using CSS.
-Rounded borders are a bit rough on the edges.
-Pins are lacking fine touches – due to a border-radius restriction you can’t set border radius on divs smaller than 4px.
-CSS validation fails miserably.
-CSS3 specification isn’t done yet and it could change; this would mean that developer has to revisit and rewrite the code.
-Double work. You still have to create images version for browsers that don’t support all CSS3 rules.
-CONCLUSION:
-This analysis is completely useless (correct me if I’m wrong), but it was fun and challenging to make. If nothing else, it shows one practical scenario of progressive enhancement using CSS3 techniques.
-For this to be worth implementing, the site traffic should be really really high, and even then it would be questionable if it’s worth hassling and doing all the extra work.
-
-
-http://www.impressivewebs.com/css3-click-chart/
-
-
-%h1 Fallbacks
-%h2 Flexbox Model
-=link_to('https://github.com/doctyper/flexie', 'https://github.com/doctyper/flexie')
-%h2 Jquery Fallbacks For CSS Animation
-=link_to('http://addyosmani.com/blog/css3transitions-jquery/', 'http://addyosmani.com/blog/css3transitions-jquery/')
-=link_to('http://louisremi.github.com/jquery.transition.js/test/index.html', 'http://louisremi.github.com/jquery.transition.js/test/index.html', '_blank')
-%h2 Conditional Loader
-=link_to('http://yepnopejs.com/', 'http://yepnopejs.com/')
+%ul
+  %li #{ link_to('Ceaser', 'http://matthewlein.com/ceaser/')} - CSS easing animation tool.
+  %li #{ link_to('jQuery Fallbacks', 'http://addyosmani.com/blog/css3transitions-jquery/')}
 %h2 CSS3 Decorations
-=link_to('http://css3pie.com/', 'http://css3pie.com/')
+%ul
+  %li #{ link_to('CSS3 Pie', 'http://css3pie.com/') } - A javascript solution that allows you to use CSS3 features such as box shadow, border radius, and multiple background images.
+%h2 Feature support, detection, &amp; loading 
+%ul
+  %li #{ link_to('Can I Use', 'http://caniuse.com/')} - Compatibility Tables
+  %li #{ link_to('Modernizr', 'http://www.modernizr.com/')} - Feature Detection
+  %li #{ link_to('Yep Nope', 'http://yepnopejs.com/')} - Conditional Loader
+%h2 Generators
+%ul
+  %li #{ link_to('CSS3 WYSIWYG', 'http://www.css3maker.com/index.html')}
+  %li #{ link_to('CSS Gradient Generator', 'http://www.colorzilla.com/gradient-editor/')}
+%h2 Media Queries
+%ul
+  %li #{ link_to('Respond', 'https://github.com/scottjehl/Respond')} - A fast & lightweight polyfill for min/max-width CSS3 Media Queries (for IE 6-8, and more)...
+%h2 Layout
+%ul
+  %li
+    =link_to('Flexbox', 'https://github.com/doctyper/flexie')
+  %li
+    =link_to('Multi Column', 'http://welcome.totheinter.net/2008/07/22/multi-column-layout-with-css-and-jquery/')
+%h2 Selectors
+%ul
+  %li #{ link_to('Selectivizr', 'http://selectivizr.com/')} - A Javascript utility that emulates CSS3 pseudo and attribute selectors for IE6-8.
+%h2 Sites to watch
+%p A few pages to find inspiration as well as stay up to date on whats possible.
+%ul
+  %li #{ link_to('http://tympanus.net/codrops/', 'http://tympanus.net/codrops/')}
+  %li #{ link_to('http://tutorialzine.com/', 'http://tutorialzine.com/')}
+  %li #{ link_to('http://css-tricks.com/', 'http://css-tricks.com/')} 
+  %li #{ link_to('http://www.webstuffshare.com/', 'http://www.webstuffshare.com/')}
+  %li #{ link_to('http://www.zurb.com/playground', 'http://www.zurb.com/playground')}
+  %li #{ link_to('http://cssglobe.com/', 'http://cssglobe.com/')}
+  %li #{ link_to('http://line25.com/', 'http://line25.com/')}
 %h2 Web Typography
-=link_to('http://letteringjs.com/', 'http://letteringjs.com/')
-%h2 Conditional Animation Loader
-=link_to('http://playground.benbarnett.net/jquery-animate-enhanced/', 'http://playground.benbarnett.net/jquery-animate-enhanced/')
-%h1 Helpers
-%h2 Prefix Elimination
-=link_to('http://leaverou.github.com/prefixfree/', 'http://leaverou.github.com/prefixfree/')
+%ul
+  %li #{ link_to('Lettering', 'http://letteringjs.com/')} - A javascript solution for down to the letter control to typography.

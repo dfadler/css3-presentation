@@ -1,116 +1,151 @@
-%h1 CSS3 Demos
-http://blog.echoenduring.com/2010/05/13/create-beautiful-css3-typography/
-http://css-tricks.com/examples/DifferentSelectionColors/
-%h2 Media Queries
-=link_to('http://webdesignerwall.com/demo/adaptive-design/final.html', 'http://webdesignerwall.com/demo/adaptive-design/final.html')
-=link_to('http://www.about.com/', 'http://www.about.com/')
-%h2 Flex Box
-=link_to('http://www.the-haystack.com/playground/css3-flexbox/flexbox.html', 'http://www.the-haystack.com/playground/css3-flexbox/flexbox.html')
-=link_to('http://www.456bereastreet.com/lab/flexbox/', 'http://www.456bereastreet.com/lab/flexbox/')
-
-%h2 Multi Column Layout
-=link_to('http://welcome.totheinter.net/autocolumn/sample.html', 'http://welcome.totheinter.net/autocolumn/sample.html')
-
-%h2 Light Box
-=link_to('http://www.paulrhayes.com/experiments/modal/', 'http://www.paulrhayes.com/experiments/modal/')
-
-%h2 Reflection
-=link_to('http://s3.amazonaws.com/nettuts/704_cssReflections/index.html', 'http://s3.amazonaws.com/nettuts/704_cssReflections/index.html')
-
-%h2 Shadows
-=link_to('http://www.viget.com/uploads/file/boxshadows/', 'http://www.viget.com/uploads/file/boxshadows/')
-
-%h1 Pure CSS
-
-%h2 Slide Show
-=link_to('http://designmadeingermany.de/slideshow/', 'http://designmadeingermany.de/slideshow/')
-=link_to('http://iamceege.com/pure-css3-content-slider/#', 'http://iamceege.com/pure-css3-content-slider/#')
-
-%h2 Text
-=link_to('Letter Press', 'http://line25.com/wp-content/uploads/2009/letterpress/demo/demo.html')
-=link_to('Text Shadow', 'http://www.zachstronaut.com/lab/text-shadow-box/text-shadow-box2.html')
-=link_to('I Love Typography', 'http://nicolasgallagher.com/css-typography-experiment/demo/')
-
-%h2 Animation
-=link_to('The Matrix', 'http://girliemac.com/sandbox/matrix.html')
-=link_to('Superman', 'http://jsfiddle.net/addyosmani/BFeMN/show/')
-
-%h2 Photo Galleries
-=link_to('Polaroids', 'http://girliemac.com/sandbox/matrix.html')
-=link_to('Movie Posters', 'http://demo.marcofolio.net/3d_animation_css3/')
-=link_to('Trading Cards', 'http://line25.com/wp-content/uploads/2010/webkit-flip/demo/index.html')
-=link_to('Stacked Index Cards', 'http://designlovr.com/examples/dynamic_stack_of_index_cards/')
-=link_to('Sliding Vinyl', 'http://www.zurb.com/playground/sliding-vinyl')
-=link_to('Messy Polaroid Stack', 'http://media.24ways.org/2009/14/5/index.html')
-
+-content_for :head do
+  %title Demos | CSS3
+  
+%h1 Demos
 %h2 3D 
-=link_to('Six Sided Cube', 'http://nettuts.s3.amazonaws.com/893_css3D/source_files/index.html')
-=link_to('Cubes &amp; Video', 'http://www.zachstronaut.com/lab/isocube.html')
-=link_to('Yet Another Cube', 'http://www.paulrhayes.com/experiments/cube-3d/')
-=link_to('Spheres', 'http://www.paulrhayes.com/experiments/sphere/')
-=link_to('Tetrahedron', 'http://www.paulrhayes.com/experiments/pyramid/index.html')
-=link_to('Perspective', 'http://www.paulrhayes.com/experiments/perspective/')
-=link_to('City', 'http://cubiq.org/dropbox/3dcity/index2.html')
-=link_to('Rectangle...', 'http://www.eleqtriq.com/2010/11/natural-object-rotation-with-css3-3d/')
-=link_to('More Primitives', 'http://css-3d.org/')
-=link_to('Poster Circle', 'http://www.webkit.org/blog-files/3d-transforms/poster-circle.html')
-=link_to('Yes another cube, but this one has a cube inside of a cube...', 'http://www.webkit.org/blog-files/3d-transforms/morphing-cubes.html')
-
-%h2 Interface Elements
-=link_to('Unlock Slider', 'http://css-tricks.com/examples/SlideToUnlock/')
-=link_to('Tabs', 'http://demo.marcofolio.net/css3_tabbed_nav/')
-=link_to('Buttons', 'http://lab.simurai.com/css/buttons/')
-=link_to('More Buttons', 'http://demo.tutorialzine.com/2010/10/css3-animated-bubble-buttons/css3-buttons.html')
-=link_to('Shapes', 'http://www.css3shapes.com/')
-=link_to('Accordion', 'http://www.paulrhayes.com/experiments/accordion/')
-=link_to('Another Accordion', 'http://demos.w3avenue.com/cross-browser-pure-css3-vertical-accordion/')
-=link_to('Light Box', 'http://www.paulrhayes.com/experiments/modal/')
-=link_to('Share Buttons', 'http://jsfiddle.net/sl1dr/PayvT/')
-=link_to('Social Icons', 'http://nicolasgallagher.com/pure-css-social-media-icons/demo/')
-=link_to('Folded Corners', 'http://nicolasgallagher.com/pure-css-folded-corner-effect/demo/')
-=link_to('Rolled Corners', 'http://www.waytoocrowded.com/extras/css3-rolled-corners/')
-=link_to('Speech Bubbles', 'http://nicolasgallagher.com/pure-css-speech-bubbles/demo/')
-=link_to('Loader', 'http://media.24ways.org/2009/15/spinner.html')
-=link_to('Progress Bar', 'http://skunkworks.ivanvanderbyl.com/ui/')
-
-%h2 Charts
-=link_to('Bar', 'http://demo.marcofolio.net/css3_bar_chart_animated/')
-
-
-%h2 Layout
-=link_to('http://jsfiddle.net/addyosmani/Mxyaj/show/', 'http://jsfiddle.net/addyosmani/Mxyaj/show/')
-
+%ul
+  %li
+    =link_to('Six Sided Cube', 'http://nettuts.s3.amazonaws.com/893_css3D/source_files/index.html')
+  %li
+    =link_to('Yet Another Cube', 'http://www.paulrhayes.com/experiments/cube-3d/')
+  %li
+    =link_to('Spheres', 'http://www.paulrhayes.com/experiments/sphere/')
+  %li
+    =link_to('Perspective', 'http://www.paulrhayes.com/experiments/perspective/')
+  %li
+    =link_to('City', 'http://cubiq.org/dropbox/3dcity/index2.html')
+  %li
+    =link_to('Rectangle...', 'http://www.eleqtriq.com/2010/11/natural-object-rotation-with-css3-3d/')
+  %li
+    =link_to('More Primitives', 'http://css-3d.org/')
+  %li
+    =link_to('Poster Circle', 'http://www.webkit.org/blog-files/3d-transforms/poster-circle.html')
+  %li
+    =link_to('Yes another cube, but this one has a cube inside of a cube...', 'http://www.webkit.org/blog-files/3d-transforms/morphing-cubes.html')
 %h2 Branding
-=link_to('Chrome', 'http://dl.dropbox.com/u/8498648/chrome-logo.html')
-=link_to('Opera', 'http://desandro.com/articles/opera-logo-css/')
-
-%h2 Misc Effects
-=link_to('Bokeh', 'http://nimbupani.com/bokeh-with-css3-gradients.html')
-=link_to('Vignettes', 'http://nimbupani.com/demo/css3vignettes/')
-=link_to('Page Flip', 'http://www.romancortes.com/ficheros/page-flip.html')
-=link_to('Page Curl', 'http://matthamm.com/box-shadow-curl.html')
-=link_to('Parallax', 'http://www.romancortes.com/blog/css-3d-meninas/')
-=link_to('Space', 'http://media.24ways.org/2009/15/space.html')
-=link_to('Patterns', 'http://lea.verou.me/demos/css3-patterns.html')
-=link_to('Solar System', 'http://neography.com/experiment/circles/solarsystem/')
-=link_to('Another Solar System', 'http://nicolasgallagher.com/css-pseudo-element-solar-system/demo/')
-=link_to('Blurry Backgrounds', 'http://css-tricks.com/examples/BlurryBackgroundEffect/')
-=link_to('Sticky Notes', 'http://www.accidentalhacker.com/sticky-notes-with-css3/')
-=link_to('Calendar Icon', 'http://cssglobe.com/lab/calendar/01.html')
-
-%h2 Where do I put this
-=link_to('Pricing Grid', 'http://webdesignersdesk.com/demo/pricegrid/')
-=link_to('Animated Ads', 'http://css-tricks.com/examples/SlideupBoxes/')
-
-%h1 Badassery
-=link_to('Keyboard', 'http://dl.dropbox.com/u/921159/Keyboard/page.html#')
-=link_to('Shadow Experiments', 'http://www.zurb.com/playground/css-boxshadow-experiments')
-=link_to('Rolling Coca Cola Can', 'http://www.romancortes.com/blog/pure-css-coke-can/')
-
-%h1 Sites
-=link_to('http://www.stompfrog.co.uk/', 'http://www.stompfrog.co.uk/')
-=link_to('http://trentwalton.com/', 'http://trentwalton.com/')
-%h2 Fantastic Typography
-=link_to('http://lostworldsfairs.com/eldorado/', 'http://lostworldsfairs.com/eldorado/')
-=link_to('http://lostworldsfairs.com/atlantis/', 'http://lostworldsfairs.com/atlantis/')
-=link_to('http://lostworldsfairs.com/moon/', 'http://lostworldsfairs.com/moon/')
+%ul
+  %li
+    =link_to('Chrome', 'http://dl.dropbox.com/u/8498648/chrome-logo.html')
+  %li
+    =link_to('Opera', 'http://desandro.com/articles/opera-logo-css/')
+%h2 Charts
+%ul
+  %li
+    =link_to('Bar', 'http://demo.marcofolio.net/css3_bar_chart_animated/')
+%h2 Interface Elements
+%ul
+  %li
+    =link_to('Unlock Slider', 'http://css-tricks.com/examples/SlideToUnlock/')
+  %li
+    =link_to('Tabs', 'http://demo.marcofolio.net/css3_tabbed_nav/')
+  %li
+    =link_to('Buttons', 'http://lab.simurai.com/css/buttons/')
+  %li
+    =link_to('More Buttons', 'http://demo.tutorialzine.com/2010/10/css3-animated-bubble-buttons/css3-buttons.html')
+  %li
+    =link_to('Shapes', 'http://www.css3shapes.com/')
+  %li
+    =link_to('Accordion', 'http://www.paulrhayes.com/experiments/accordion/')
+  %li
+    =link_to('Another Accordion', 'http://demos.w3avenue.com/cross-browser-pure-css3-vertical-accordion/')
+  %li
+    =link_to('Light Box', 'http://www.paulrhayes.com/experiments/modal/')
+  %li
+    =link_to('Share Buttons', 'http://jsfiddle.net/sl1dr/PayvT/')
+  %li
+    =link_to('Social Icons', 'http://nicolasgallagher.com/pure-css-social-media-icons/demo/')
+  %li
+    =link_to('Folded Corners', 'http://nicolasgallagher.com/pure-css-folded-corner-effect/demo/')
+  %li
+    =link_to('Speech Bubbles', 'http://nicolasgallagher.com/pure-css-speech-bubbles/demo/')
+  %li
+    =link_to('Loader', 'http://media.24ways.org/2009/15/spinner.html')
+  %li
+    =link_to('Progress Bar', 'http://skunkworks.ivanvanderbyl.com/ui/')
+%h2 Layout
+%h3 Multi Column
+%ul
+  %li
+    =link_to('News Paper Layout', 'http://welcome.totheinter.net/autocolumn/sample.html')
+%h3 Flex Box
+%ul
+  %li
+    =link_to('Layout Example', 'http://www.the-haystack.com/playground/css3-flexbox/flexbox.html')
+  %li
+    =link_to('Distribution and Position Examples', 'http://www.456bereastreet.com/lab/flexbox/')
+%h2 Media Queries
+%ul
+  %li
+    =link_to('The Backer Street Inquirer', 'http://www.alistapart.com/d/responsive-web-design/ex/ex-site-FINAL.html')
+  %li
+    =link_to('About.com', 'http://www.about.com/')
+%h2 Photo Galleries
+%ul
+  %li
+    =link_to('Movie Posters', 'http://demo.marcofolio.net/3d_animation_css3/')
+  %li
+    =link_to('Trading Cards', 'http://line25.com/wp-content/uploads/2010/webkit-flip/demo/index.html')
+  %li
+    =link_to('Stacked Index Cards', 'http://designlovr.com/examples/dynamic_stack_of_index_cards/')
+  %li
+    =link_to('Sliding Vinyl', 'http://www.zurb.com/playground/sliding-vinyl')
+  %li
+    =link_to('Messy Polaroid Stack', 'http://media.24ways.org/2009/14/5/index.html')
+%h2 Misc
+%ul
+  %li
+    =link_to('Keyboard', 'http://dl.dropbox.com/u/921159/Keyboard/page.html#')
+  %li
+    =link_to('Rolling Coca Cola Can', 'http://www.romancortes.com/blog/pure-css-coke-can/')
+  %li
+    =link_to('Bokeh', 'http://nimbupani.com/bokeh-with-css3-gradients.html')
+  %li
+    =link_to('Vignettes', 'http://nimbupani.com/demo/css3vignettes/')
+  %li
+    =link_to('Page Flip', 'http://www.romancortes.com/ficheros/page-flip.html')
+  %li
+    =link_to('Page Curl', 'http://matthamm.com/box-shadow-curl.html')
+  %li
+    =link_to('Parallax', 'http://www.romancortes.com/blog/css-3d-meninas/')
+  %li
+    =link_to('Space', 'http://media.24ways.org/2009/15/space.html')
+  %li
+    =link_to('Patterns', 'http://lea.verou.me/demos/css3-patterns.html')
+  %li
+    =link_to('Solar System', 'http://neography.com/experiment/circles/solarsystem/')
+  %li
+    =link_to('Another Solar System', 'http://nicolasgallagher.com/css-pseudo-element-solar-system/demo/')
+  %li
+    =link_to('Blurry Backgrounds', 'http://css-tricks.com/examples/BlurryBackgroundEffect/')
+  %li
+    =link_to('Sticky Notes', 'http://www.accidentalhacker.com/sticky-notes-with-css3/')
+  %li
+    =link_to('Calendar Icon', 'http://cssglobe.com/lab/calendar/01.html')
+%h2 Reflection
+%ul
+  %li
+    =link_to('http://s3.amazonaws.com/nettuts/704_cssReflections/index.html', 'http://s3.amazonaws.com/nettuts/704_cssReflections/index.html')
+%h2 Shadows
+%ul
+  %li
+    =link_to('39 Box Shadows, No Good Reason', 'http://www.viget.com/uploads/file/boxshadows/')
+  %li
+    =link_to('Curled Corners', 'http://matthamm.com/box-shadow-curl.html')
+  %li
+    =link_to('Shadow Experiments', 'http://www.zurb.com/playground/css-boxshadow-experiments')
+%h2 Slide Show
+%ul
+  %li
+    =link_to('http://designmadeingermany.de/slideshow/', 'http://designmadeingermany.de/slideshow/')
+  %li
+    =link_to('http://iamceege.com/pure-css3-content-slider/#', 'http://iamceege.com/pure-css3-content-slider/#')
+%h2 Text &amp; Typography
+%ul
+  %li
+    =link_to('Highlight Color', 'http://css-tricks.com/examples/DifferentSelectionColors/')
+  %li
+    =link_to('Letter Press', 'http://line25.com/wp-content/uploads/2009/letterpress/demo/demo.html')
+  %li
+    =link_to('Text Shadow', 'http://www.zachstronaut.com/lab/text-shadow-box/text-shadow-box2.html')
+  %li
+    =link_to('I Love Typography', 'http://nicolasgallagher.com/css-typography-experiment/demo/')

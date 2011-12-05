@@ -6,18 +6,6 @@
 %h2 The purpose of this site
 %p To facilitate conversation about CSS3 between developers and designers with the ultimate goal of creating better and more advanced websites.
 
-#to-do{ :style => 'background: #ffffff; padding: 20px; margin: 40px 0 0; border: solid 2px red;' }
-  %h3{ :style => 'color: red; margin-top: 0;' }
-    To Do
-  %ol{ :style => 'color: black' }
-    %li Add demos to the related pages and prune the demo list
-    %li Review the support page to make sure it refers to fallbacks and whats mentioned is included on the properties page
-    %li Figure out the support page 
-    %li Create intro message
-    %li Small amount of information on the sub pages and the sections they contain
-    %li Add all page titles
-    %li Review content to see if there is anything that can be removed
-
 %h2 Beginners Guide
 
 %p
@@ -41,13 +29,9 @@
 %h2 In the future
 
 %h3 Interface Design
-
-%p 
-  Lately I've been seeing #{ link_to('videos from designers', 'http://vimeo.com/8790087')} who for the most part create their interfaces in the browser at the code level. 
-  The new CSS features are very "<em>Photoshop like</em>" which outside of complex images eliminates the need to use such a resource heavy application. 
-  Whats more you eliminate the cost of a high fidelity image comps and create a code base that can save you a lot of time and frustration during development.
+%p Its possible that in the future most interface design will be done in the browser. #{ link_to('Case in point.', 'http://vimeo.com/8790087')}
   
-%h3 Weighing the pros &amp; cons
+%h3 Pros &amp; cons
 
 #pros-and-cons.box-1
   #pros.box-2
@@ -64,10 +48,9 @@
     %ul
       %li Cross Training
       %li The process might be stifling to the creativity of some
-      %li To achieve the benefit of being able to use design code as development and eventually production the team would have to adhere to a very ridged coding style
+      %li To achieve the benefit of being able to use design code as development and eventually production the team would have to adhere to a very ridged coding standard
 
 %h2 Conclusion
-
 %h3 Adoption strategy for the present
 
 %p 
@@ -76,4 +59,3 @@
   %br
   %strong A.
   #{ link_to('Answer', 'http://dowebsitesneedtolookexactlythesameineverybrowser.com/')}, see #{ link_to('progressive enhancement', 'http://perishablepress.com/press/2010/01/11/css3-progressive-enhancement-smart-design/')}.
-%p Throughout my examples I make note of some javascript that can help you in achieving cross browser support for some of the CSS3 properties. For some projects these might be a perfect fit but overall I think an approach that embraces the progressive enhancement strategy is more cost effective and could actually be a selling point if presented properly.
