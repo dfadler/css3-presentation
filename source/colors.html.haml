@@ -53,16 +53,6 @@
     
   }
 %h3 Browser Support
-%blockquote
-  %p Firefox 3.0+, Safari 3+, Chrome 6+ (maybe older too?), Opera 10+ (maybe older too?)
-  %p As usual IE is left out of the party. Even version 8. I have a feeling version 9 will be supporting it but don't have any proof yet. Anyone have it installed and can test? For IE, you can just declare a fallback color. IE 8 doesn't support RGBa either, so just using a hex code is the best bet.
-  %cite  - #{ link_to('http://css-tricks.com/6565-yay-for-hsla/', 'http://css-tricks.com/6565-yay-for-hsla/') }
-%p 
-  IE 9 
-  %strong does 
-  support 
-  %em HSLA
-  and 
-  %em RGBA
+%p IE7-8 does not support HSL or RGB, all modern browser do however. If you would like to know more please proceed to #{ link_to('caniuse.com', 'http://caniuse.com/#search=rgba')}
 %h3 Cross Browser Solutions
-%p I found a few solutions to the problem but each has its own caveats. You can find out about possible solutions by reading the following <em>Stack Overflow</em> article #{link_to('Cross browser RGBA background', 'http://stackoverflow.com/questions/4792090/cross-browser-rgba-background')}. If none of the solutions in the article work for your situation #{link_to('CSS3 PIE', "http://css3pie.com/documentation/supported-css3-features/#rgba") } might fit your particular needs.
+%p If you're interested in a javascript solution #{link_to('CSS3 PIE', "http://css3pie.com/documentation/supported-css3-features/#rgba") } might fit your particular needs.

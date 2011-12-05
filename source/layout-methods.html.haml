@@ -6,7 +6,7 @@
 #without-columns
   %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
   %p dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
-%h4 The Code
+%h4 HTML
 :coderay
   #!html
   <div>
@@ -17,6 +17,7 @@
       dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </p>
   </div>
+%h4 CSS
 :coderay
   #!css
   div {
@@ -36,7 +37,7 @@
 .with-columns
   %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   
-%h4 The Code
+%h4 HTML
 :coderay
   #!html
   <div>
@@ -44,6 +45,7 @@
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </p>
   </div>
+%h4 CSS
 :coderay
   #!css
   .layout-methods #main #with-columns {
@@ -54,7 +56,7 @@
   }
 
 %h3 Browser Support
-%p The multi column module is available in all current versions of <em>Gecko</em> and <em>Webkit</em> browsers as well as several versions back. Don't expect to see this in Internet Explorer until version 10.
+%p The multi column properties are available in all current versions of <em>Gecko</em> and <em>Webkit</em> browsers as well as several versions back. Don't expect to see this in Internet Explorer until version 10. For more information please proceed to #{ link_to('caniuse.com', 'http://caniuse.com/#search=column')}
 %h3 Cross Browser Solution
 %blockquote
   %p Of course, we know that browser support for the multi-column methods is pretty much restricted to the Firefox and Safari browsers using their -moz- and -webkit- prefixes. What about Internet Explorer? In this case, there is a #{ link_to('JavaScript method', 'http://www.cvwdesign.com/txp/article/360/')} that enables support and allows you to implement some of these properties. In fact, you do not need to use the -moz- and -webkit- rules either. See my third example which uses an external style sheet that is parsed by the JavaScript. This example works with Internet Explorer 6, 7 and 8, Firefox 2 to 3.5, Safari 3 and 4, and Opera 9.6
@@ -68,4 +70,4 @@
   %cite 
     =link_to('http://www.css3.info/introducing-the-flexible-box-layout-module/', 'http://www.css3.info/introducing-the-flexible-box-layout-module/') 
 %h3 Browser Support
-%p Only supported in current <em>Gecko</em> and <em>Webkit</em> browsers and has been reported to yield different results respectively. 
+%p Only supported in current <em>Gecko</em> and <em>Webkit</em> browsers and has been reported to yield different results respectively. If you woul like to know more proceed to #{ link_to('caniuse.com', 'http://caniuse.com/#search=Flex')}

@@ -20,7 +20,7 @@
   #!css
   background-image: -webkit-linear-gradient(top, #2F2727, #1a82f7);
 %h3 Cross Browser Solution
-%p Outside of filters and <em>SVG</em> there is also #{link_to('CSS3 Pie', 'http://css3pie.com/documentation/supported-css3-features/#gradients')} but at this time it might not be a good fit for many projects.
+%p Outside of filters and <em>SVG</em> you may also find #{link_to('CSS3 Pie', 'http://css3pie.com/documentation/supported-css3-features/#gradients')} useful.
 %h2 Background Size
 %p Lately there has been a lot of sites using full size background images that scale with the window while keeping aspect ratio, this is achieved by setting the <em>background-size</em> property to cover.
 %h3 Full screen background images
@@ -53,7 +53,7 @@
 %p The background size property is supported by all modern browser with the exception of IE7-8. 
 %h3 Cross Browser Solutions
 %p #{link_to('CSS Tricks', 'http://css-tricks.com/3458-perfect-full-page-background-image/')} has a tutorial that might be of some help in supporting IE7-8 but it wont be perfect for all situations. In the event that the IE filters don't fit your needs you could also use javascript to calculate the image size.
-%h4 Javascript to get calculate the dimensions of an image while keeping its aspect ratio
+%h4 Javascript
 :coderay
   #!javascript
   for (objectWidth = windowWidth; objectHeight <= windowHeight; objectWidth += 1) {
@@ -63,14 +63,15 @@
                     'width': objectWidth
                 });
         }
-%p It should be noted that a method like the above will require you to add the image to the document, then reposition it after its been sized.
+%h4 Please Note
+%p A method like the above will require you to add the image to the <em>DOM</em>, then reposition it after its been sized.
 %h2 Multiple Backgrounds
 %section.flex-box
   %section.box-1
     %p 
       Some of the most popular effects could be made a lot easier to manage through the use of of multiple backgrounds. Parallax and mosaics are just the beginning, it will be really interesting to see what is done when we no longer have to worry about IE7-8.  
     %h3 Something Practical
-    %p Dreaming aside there are practical reasons for using multiple backgrounds. First this would eliminate the need for extra markup and styling to achieve the same background this page has with all five toggled.
+    %p Using multiple backgrounds eliminates the need for extra markup and styling to achieve the same background this page has with all five toggled.
   %section.box-2
     %p 
       %input{ :type => 'button', :value => 'Toggle Background 1', :class => "toggle-full-background inline" } 
@@ -99,20 +100,20 @@
 :coderay
   #!css
   body {
-    background: url("http://placekitten.com/2000/2000") no-repeat center center fixed;
+    background: url("/images/1.jpg") no-repeat center center fixed;
     background-color: #333333;
   }
   .one {
-    background: url("http://placekitten.com/1000/1000") 0 0 no-repeat fixed;
+    background: url("/images/1.jpg") 0 0 no-repeat fixed;
   }
   .two {
-    background: url("http://placekitten.com/400/400") no-repeat 100% 0 fixed;
+    background: url("/images/1.jpg") no-repeat 100% 0 fixed;
   }
   .three {
-    background: url("http://placekitten.com/1500/1500") no-repeat 0 100% fixed;
+    background: url("/images/1.jpg") no-repeat 0 100% fixed;
   }
   .four {
-    background: url("http://placekitten.com/700/700") no-repeat 100% 100% fixed;
+    background: url("/images/1.jpg") no-repeat 100% 100% fixed;
   }
 %h4 With Multiple Backgrounds
 %p
@@ -125,11 +126,12 @@
 :coderay
   #!css
   body {
-    background: url("http://placekitten.com/1000/1000") 0 0 no-repeat fixed, url("http://placekitten.com/400/400") no-repeat 100% 0 fixed, url("http://placekitten.com/1500/1500") no-repeat 0 100% fixed, url("http://placekitten.com/700/700") no-repeat 100% 100% fixed, url("http://placekitten.com/2000/2000") no-repeat center center fixed;
+    background: url('/images/1.jpg') 0 0 no-repeat fixed, url('/images/1.jpg') no-repeat 100% 0 fixed, url('/images/1.jpg') no-repeat 0 100% fixed, url('/images/1.jpg') no-repeat 100% 100% fixed, url('/images/1.jpg') no-repeat center center fixed;
     background-color: #333333;
+    background-size: 100px 100px, 100px 100px, 100px 100px, 100px 100px, cover;
   }
 %h3 Browser Support
-%p Multiple background images are supported by all modern browser and back a few generations with the exception of IE7-8. I did find an #{ link_to('article', 'http://76.74.170.157/post_Cross_Browser_Multi_background_images__including_I-16839.html')} that shows you how to achieve multiple backgrounds in IE7-8 using filters but I've yet to test it and have had issues with using the IE filters.
+%p Multiple background images are supported by all modern browser and back a few generations with the exception of IE7-8. I did find an #{ link_to('article', 'http://76.74.170.157/post_Cross_Browser_Multi_background_images__including_I-16839.html')} that shows you how to achieve multiple backgrounds in IE7-8 using filters but I've yet to test it and have had issues with using the IE filters. For more information please proceed to #{ link_to('caniuse.com', 'http://caniuse.com/#search=multiple backgrounds')}
 %h3 Cross Browser Solution
 %p If you wish to use multiple background in IE7-8 I've had #{ link_to('success', 'http://www.baileysrange.com/')} using  #{link_to('CSS3 Pie', 'http://css3pie.com/documentation/supported-css3-features/#pie-background')}.
 %h2 Mask Image

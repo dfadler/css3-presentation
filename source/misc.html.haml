@@ -19,6 +19,7 @@
     %p While the text-overflow: ellipsis property is supported in Internet Explorers 6 & 7, Safari 3 & 4, Chrome 1 &2, it requires special handling for IE 8 Standards Mode, Opera, and FireFox.
     %cite 
       =link_to('http://mattsnider.com/css/css-string-truncation-with-ellipsis/', 'http://mattsnider.com/css/css-string-truncation-with-ellipsis/')
+  %p For more information proceed to #{ link_to('caniuse.com', 'http://caniuse.com/#search=overflow')}.
   %h3 Cross Browser Solution
   %p The article by Justin Maxwell mentioned in the quote above #{ link_to('CSS String Truncation with Ellipsis', 'http://mattsnider.com/css/css-string-truncation-with-ellipsis/')} walks you through the process of getting this to work cross browser.
 %h2 Text Stroke
@@ -48,15 +49,14 @@
   }
   }
 %h3 Browser Support
-%p Sorry its Webkit only.
+%p Sorry its Webkit only, for more information proceed to #{ link_to('caniuse.com', 'http://caniuse.com/#search=stroke')}
 
 #reflection
   %h2 Box Reflection
-  %h3 Relax its just pudding
   %p Used to have to use java applets if you didn't want to recreate the reflection for each different image.
   %p.center
-    =image_tag('pudding.png', :alt => '')
-  %h3 The Code
+    =image_tag('bulldog.jpg', :alt => '', :style => " width: 100%;")
+  %h4 CSS
   :coderay
     #!css
     img {
@@ -68,10 +68,10 @@
     :plain
       <iframe width="420" height="315" src="http://www.youtube.com/embed/qsfuCfShoeM" frameborder="0" allowfullscreen></iframe>
   %h3 Browser Support
-  %p Sorry its Webkit only.
+  %p Sorry its Webkit only, for more information proceed to #{ link_to('caniuse.com', 'http://caniuse.com/#search=reflect')}.
 
 %h2 Selectors
-%p The selector we will have access to in the coming years will amount to finer control over design and greater user interaction. Selectors may not have the same flair as some of the other CSS3 features but its because of them that we will be able to create the next generation of user interfaces free of javascript.
+%p The selectors we will have access to in the coming years will amount to finer control over design and greater user interaction. Selectors may not have the same flair as some of the other CSS3 features but its because of them that we will be able to create the next generation of user interfaces free of javascript.
 %h3 Pseudo
 %p #{ link_to('http://reference.sitepoint.com/css/css3psuedoclasses', 'http://reference.sitepoint.com/css/css3psuedoclasses')}
 %blockquote
@@ -85,9 +85,9 @@
 %p Because of the improvement in the selectors its possible we might be replacing some existing javascript solutions with #{ link_to('pure css', 'http://iamceege.com/pure-css3-content-slider/')}. While thats amazing there are some simple uses like #{ link_to('styling children based on their number', 'http://lea.verou.me/2011/01/styling-children-based-on-their-number-with-css3/')} that I think would make all of our lives easier 
 
 %h3 Attribute Selectors
-%p With the addition of attribute selectors the semantic connection between our markup and styling will be improved #{ link_to("attribute selectors", "http://www.css3.info/preview/attribute-selectors/")}.
-
-
+%p Another way to select elements which can be particularly useful in working with forms. For more information proceed to the #{ link_to("attribute selectors", "http://www.css3.info/preview/attribute-selectors/")} at #{ link_to("css3.info.com", "http://www.css3.info/")}.
+%h3 Browser Compatibility
+%p To find out about possible compatibility issues with selectors proceed to #{ link_to('caniuse.com', 'http://caniuse.com/#search=selectors')}
 %h2 Content
 %p The content property allows you to insert content via css and has a great number of uses.
 %ul
@@ -97,8 +97,8 @@
     =link_to('Image Replacement', 'http://nicolasgallagher.com/css-image-replacement-with-pseudo-elements/demo/')
   %li
     =link_to('Many Great Examples', 'http://css-tricks.com/6555-css-content/')
-
-
+%h3 Browser Compatibility
+%p For compatibility information proceed to #{ link_to('caniuse.com', 'http://caniuse.com/#search=content')}
 %h2 Dynamic Value Calculation
 %blockquote
   %p The CSS3 calc() function is primarily used to calculate lengths, numbers, angles, transition/animation times or sound frequencies. However, it allows you to mix measurement types — a powerful concept in CSS.
@@ -106,7 +106,7 @@
     =link_to('http://www.sitepoint.com/css3-calc-function/', 'http://www.sitepoint.com/css3-calc-function/')
 
 %h3 Browser Support
-Currently only supported in IE9+ and Firefox 4+ 
+Currently only supported in IE9+ and Firefox 5+, for more information proceed to #{ link_to('caniuse.com', 'http://caniuse.com/#search=calc')}.
 
 %h2 Selection Colors
 %p A simple property that changes the color of the selection highlight. #{ link_to('Example', 'http://css-tricks.com/examples/DifferentSelectionColors/')}

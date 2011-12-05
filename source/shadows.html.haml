@@ -3,18 +3,21 @@
 %h1 Shadow Properties
 %h2 Box Shadows
 %p 
-  #{image_tag('shadow.jpg', :height => '400', :width => '370', :class => 'shadow image-align-right')} Most designers will probably be gagging at the garish use of drop shadow on this classic piece of American radio history. Just as radio had a lot going on that the listener might not notice so does this page.
+  #{image_tag('shadow.jpg', :height => '400', :width => '370', :class => 'shadow image-align-right')} 
+  Just as radio has a lot going on that the listener might not notice so does this page.
   %br
   %input{ :type => 'button', :value => 'Toggle #main Shadows', :class => "toggle-shadows" }
 %p 
-  The <em>box-shadow</em> module is more than just a simple drop shadow it also allows for inset and even multiple shadows on the same element.
+  The box shadow property is more than just a simple drop shadow it also allows for inset and even multiple shadows on the same element.
   %br
   %input{ :type => 'button', :value => 'Toggle Vibrant Shadows', :class => "toggle-vibrant-shadows", :title => 'The buttons have an inset shadow!' }
 %h3 More than just shadows
 %p The uses for the box shadow property go far beyond creating the seaming of depth.
 %p #{ link_to('39 BOX SHADOWS, NO GOOD REASON', 'http://www.viget.com/uploads/file/boxshadows/')}
+%h3 Code Free Testing!
+%p If you would like to test the box shadow for yourself without have to touch the code proceed to #{ link_to('css3maker.com', 'http://www.css3maker.com/box-shadow.html')}.
 %h3 Browser Support
-%p With the exception of IE7-8 all modern browsers support the box shadow property even going back multiple versions.
+%p With the exception of IE7-8 all modern browsers support the box shadow property even going back multiple versions. For more information proceed to #{ link_to('caniuse.com', 'http://caniuse.com/#search=shadow')}.
 .flex-box
   .box-1
     %h3 Cross Browser Support
@@ -35,4 +38,4 @@
 %p The example below was found at #{ link_to('http://www.css3.info/preview/text-shadow/', 'http://www.css3.info/preview/text-shadow/')}
 %h2.fire Text Shadows Are Hot
 %h3 Browser Support
-%p While not a <em>CSS3</em> feature it might as well be with the lack of attention IE is showing it. <strong>Not even in IE9</strong> do you have access to the text shadow which is a real shame since most other browsers have had it for years.
+%p While not a <em>CSS3</em> feature it might as well be with the lack of attention IE is showing it. <strong>Not even in IE9</strong> do you have access to the text shadow which is a real shame since most other browsers have had it for years. For more information proceed to #{ link_to('caniuse.com', 'http://caniuse.com/#search=shadow')}.

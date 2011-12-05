@@ -94,7 +94,7 @@ body
 // Main Content Section
 #main
   width: $default-content-width
-  margin: 0 auto ($default-content-padding / 2)
+  margin: ($default-content-padding) auto ($default-content-padding / 2)
   padding: $default-content-padding
   background: #efefef
   +border-radius($default-radius)
@@ -170,8 +170,8 @@ body
   h1
     font-size: 3em
     text-transform: uppercase
-    +background(image-url('blackboard.jpg') no-repeat center center fixed $default-background-color)
-    +background-size(contain)
+    +background(image-url('blackboard.jpg') no-repeat bottom right fixed $default-background-color)
+    +background-size(cover)
     color: #fff
     padding: 10px
     width: auto
